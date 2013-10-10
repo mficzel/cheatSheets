@@ -54,7 +54,7 @@ PHPDoc annotations
 =============================  ===================================
 
 =======================================================================  ===================================
-Folder structure inside extension dir typo3conf/ext/[extension_key]/
+**Folder structure inside extension dir typo3conf/ext/[extension_key]/**
 ============================================================================================================
 ext_autoload.php                                                         Mapping classname to classfile location
 ext_emconf.php                                                           Extension manager configuration
@@ -63,7 +63,7 @@ ext_localconf.php                                                        Fronten
 ext_tables.php                                                           SQL statements for the databse structure
 ext_tables.sql                                                           ExtensionBuilder configuration
 -----------------------------------------------------------------------  -----------------------------------
-Classes/                                                                 All PHP classes reside here
+**Classes/**                                                             **All PHP classes reside here**
 -----------------------------------------------------------------------  -----------------------------------
 Classes/Controller/                                                      Controller classes
 Classes/Controller/[DomainObjectName]Controller.php                      Controller of model [DomainObjectName] (rec.)
@@ -79,17 +79,17 @@ Utillity                                                                 Utillit
 Classes/ViewHelpers/                                                     Individual fluid view helpers reside here
 Classes/ViewHelpers/[VHName]ViewHelper.php                               View helper with name VHName
 -----------------------------------------------------------------------  -----------------------------------
-Configuration/                                                           All configuration (structure is a suggestion)
+**Configuration/**                                                       **All configuration (structure is a suggestion)**
 -----------------------------------------------------------------------  -----------------------------------
 Configuration/TCA/                                                       Table configuration array (TCA) Files e.g.: [DomainObjectName].php
 Configuration/FlexForms/                                                 Flexforms used for backend forms
 Configuration/TypoScript/                                                TypoScript constants and setup (e.g. constants.txt and setup.txt)
 -----------------------------------------------------------------------  -----------------------------------
-Documentation/                                                           All documentation reside here
+**Documentation/**                                                       **All documentation reside here**
 -----------------------------------------------------------------------  -----------------------------------
 Documentation/Manual/                                                    Extension manual, subfolder [format]/[lang]/
 -----------------------------------------------------------------------  -----------------------------------
-Resources/                                                               All resources reside here
+**Resources/**                                                           **All resources reside here**
 -----------------------------------------------------------------------  -----------------------------------
 Resources/Private/                                                       Private resources
 Resources/Private/Backend/                                               Resources used by backend modules
@@ -106,7 +106,7 @@ Resources/Private/Templates/[Controller]/                                All tem
 Resources/Private/Templates/[Controller]/[Action].[format]               Template of [Action] from [Controller] (FE)
 Resources/Public/                                                        Additional resources (own dirs if needed, like „Icons“, ...)
 -----------------------------------------------------------------------  -----------------------------------
-Tests/                                                                   All tests reside here
+**Tests/**                                                               **All tests reside here**
 -----------------------------------------------------------------------  -----------------------------------
 Tests/Unit/                                                              Unit Tests
 =======================================================================  ===================================
