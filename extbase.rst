@@ -62,9 +62,9 @@ ext_icon.gif                                                             Extensi
 ext_localconf.php                                                        Frontend configuration
 ext_tables.php                                                           SQL statements for the databse structure
 ext_tables.sql                                                           ExtensionBuilder configuration
-=======================================================================  ===================================
+-----------------------------------------------------------------------  -----------------------------------
 Classes/                                                                 All PHP classes reside here
-=======================================================================  ===================================
+-----------------------------------------------------------------------  -----------------------------------
 Classes/Controller/                                                      Controller classes
 Classes/Controller/[DomainObjectName]Controller.php                      Controller of model [DomainObjectName] (rec.)
 Classes/Domain/                                                          Domain specific classes
@@ -78,19 +78,19 @@ Service                                                                  Service
 Utillity                                                                 Utillity classes (just helper classes)
 Classes/ViewHelpers/                                                     Individual fluid view helpers reside here
 Classes/ViewHelpers/[VHName]ViewHelper.php                               View helper with name VHName
-=======================================================================  ===================================
+-----------------------------------------------------------------------  -----------------------------------
 Configuration/                                                           All configuration (structure is a suggestion)
-=======================================================================  ===================================
+-----------------------------------------------------------------------  -----------------------------------
 Configuration/TCA/                                                       Table configuration array (TCA) Files e.g.: [DomainObjectName].php
 Configuration/FlexForms/                                                 Flexforms used for backend forms
 Configuration/TypoScript/                                                TypoScript constants and setup (e.g. constants.txt and setup.txt)
-=======================================================================  ===================================
+-----------------------------------------------------------------------  -----------------------------------
 Documentation/                                                           All documentation reside here
-=======================================================================  ===================================
+-----------------------------------------------------------------------  -----------------------------------
 Documentation/Manual/                                                    Extension manual, subfolder [format]/[lang]/
-=======================================================================  ===================================
+-----------------------------------------------------------------------  -----------------------------------
 Resources/                                                               All resources reside here
-=======================================================================  ===================================
+-----------------------------------------------------------------------  -----------------------------------
 Resources/Private/                                                       Private resources
 Resources/Private/Backend/                                               Resources used by backend modules
 Resources/Private/Backend/Layouts/                                       Layout files for backend modules
@@ -105,8 +105,8 @@ Resources/Private/Templates/                                             Templat
 Resources/Private/Templates/[Controller]/                                All templates of a specific controller (FE)
 Resources/Private/Templates/[Controller]/[Action].[format]               Template of [Action] from [Controller] (FE)
 Resources/Public/                                                        Additional resources (own dirs if needed, like „Icons“, ...)
-=======================================================================  ===================================
+-----------------------------------------------------------------------  -----------------------------------
 Tests/                                                                   All tests reside here
-=======================================================================  ===================================
+-----------------------------------------------------------------------  -----------------------------------
 Tests/Unit/                                                              Unit Tests
 =======================================================================  ===================================
