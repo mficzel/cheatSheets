@@ -52,3 +52,61 @@ PHPDoc annotations
 @deprecated                    Declares that the following class/method should not be used anymore
 @scope                         Defines the type of the class. Possible values are prototype and singleton Not used in the moment: For singleton use ...implements t3lib_Singleton instead
 =============================  ===================================
+
+=======================================================================  ===================================
+Folder structure inside extension dir typo3conf/ext/[extension_key]/
+============================================================================================================
+ext_autoload.php                                                         Mapping classname to classfile location
+ext_emconf.php                                                           Extension manager configuration
+ext_icon.gif                                                             Extension icon
+ext_localconf.php                                                        Frontend configuration
+ext_tables.php                                                           SQL statements for the databse structure
+ext_tables.sql                                                           ExtensionBuilder configuration
+=======================================================================  ===================================
+Classes/                                                                 All PHP classes reside here
+=======================================================================  ===================================
+Classes/Controller/                                                      Controller classes
+Classes/Controller/[DomainObjectName]Controller.php                      Controller of model [DomainObjectName] (rec.)
+Classes/Domain/                                                          Domain specific classes
+Classes/Domain/Model/                                                    Model classes
+Classes/Domain/Model/[DomainObjectName].php                              Specific model class for [DomainObjectName]
+Classes/Domain/Repository/                                               Repository classes
+Classes/Domain/Repository/[DomainObjectName]Repository.php               Repository of model [DomainObjectName]
+Classes/Domain/Validator/                                                Validator classes
+Classes/Domain/Validator/[DomainObjectName]Validator.php                 Validator of model [DomainObjectName]
+Service                                                                  Service classes
+Utillity                                                                 Utillity classes (just helper classes)
+Classes/ViewHelpers/                                                     Individual fluid view helpers reside here
+Classes/ViewHelpers/[VHName]ViewHelper.php                               View helper with name VHName
+=======================================================================  ===================================
+Configuration/                                                           All configuration (structure is a suggestion)
+=======================================================================  ===================================
+Configuration/TCA/                                                       Table configuration array (TCA) Files e.g.: [DomainObjectName].php
+Configuration/FlexForms/                                                 Flexforms used for backend forms
+Configuration/TypoScript/                                                TypoScript constants and setup (e.g. constants.txt and setup.txt)
+=======================================================================  ===================================
+Documentation/                                                           All documentation reside here
+=======================================================================  ===================================
+Documentation/Manual/                                                    Extension manual, subfolder [format]/[lang]/
+=======================================================================  ===================================
+Resources/                                                               All resources reside here
+=======================================================================  ===================================
+Resources/Private/                                                       Private resources
+Resources/Private/Backend/                                               Resources used by backend modules
+Resources/Private/Backend/Layouts/                                       Layout files for backend modules
+Resources/Private/Backend/Templates/                                     Template files for backend modules
+Resources/Private/Backend/Templates/[ControllerName]/                    All templates of a specific controller (BE)
+Resources/Private/Backend/Templates/[ControllerName]/[action].[format]   Template of [action] from [Controller] (BE)
+Resources/Private/Language/                                              Language files for l10n
+Resources/Private/Language/locallang.xml                                 Main language file - use key w. translate viewhelper
+Resources/Private/Layouts/                                               Layout files for frontend plugins
+Resources/Private/Partials/                                              Partials files for frontend plugins
+Resources/Private/Templates/                                             Template files for frontend plugins
+Resources/Private/Templates/[Controller]/                                All templates of a specific controller (FE)
+Resources/Private/Templates/[Controller]/[Action].[format]               Template of [Action] from [Controller] (FE)
+Resources/Public/                                                        Additional resources (own dirs if needed, like „Icons“, ...)
+=======================================================================  ===================================
+Tests/                                                                   All tests reside here
+=======================================================================  ===================================
+Tests/Unit/                                                              Unit Tests
+=======================================================================  ===================================
