@@ -13,29 +13,31 @@ Service                  When an operation does not conceptually belong to any o
 Repository               Methods for retrieving domain objects should delegate to a specialized Repository object such that alternative storage implementations may be easily interchanged. Derives from class ``Tx_Extbase_Persistence_Repository``
 =======================  =======================================================================================================================================================================================================================
 
-+-----------------------------------------------------------------------------------------------------------------+
-| Naming Conventions                                                                                              |
-+=======================+=========================================================================================+
-| Classes               | UpperCamelCase                                                                          |
-+-----------------------+-----------------------------------------------------------------------------------------+
-| Methods & Variables   | lowerCamelCase                                                                          |
-+-----------------------+-----------------------------------------------------------------------------------------+
-| General class naming  | Tx_[ExtensionName]_[Path].php                                                           |
-|                       | - [ExtensionName] is extension_key without _ and in UpperCamelCase                      |
-|                       | - [Path] is inside Classes directory of the extension, change / with _                  |
-|                       | e.g.:                                                                                   |
-|                       | Class-Name: Tx_BlogExample_Domain_Model_Post                                            |
-|                       | Path & Filename: typo3conf/ext/blog_example/Classes/Domain/Model/Post.php or            |
-|                       | Class-Name: Tx_Extbase_MVC_Controller_ActionController                                  |
-|                       | Path & Filename: typo3/sysext/extbase/Classes/MVC/Controller/ActionController.php       |
-+-----------------------+-----------------------------------------------------------------------------------------+
-| Interfaces            | Class name ends in „Interface“, e.g. Tx_Extbase_MVC_RequestInterface                    |
-+-----------------------+-----------------------------------------------------------------------------------------+
-| Abstact classes       | beginning of last class name part is „Abstract“                                         |
-|                       | e.g. Tx_Extbase_MVC_Controller_AbstractController                                       |
-|                       | Domain model entity: ... extends Tx_Extbase_DomainObject_AbstractEntity                 |
-|                       | Domain model value object: ... extends Tx_Extbase_DomainObject_AbstractValueObject      |
-+-----------------------+-----------------------------------------------------------------------------------------+
+=======================   =====================================
+Naming Conventions
+===============================================================
+Classes                   UpperCamelCase
+Methods & Variables       lowerCamelCase
+General class naming      Tx_[ExtensionName]_[Path].php
+
+                          - [ExtensionName] is extension_key without _ and in UpperCamelCase
+                          - [Path] is inside Classes directory of the extension, change / with _
+
+                          e.g.:
+
+                          Class-Name: Tx_BlogExample_Domain_Model_Post
+
+                          Path & Filename: typo3conf/ext/blog_example/Classes/Domain/Model/Post.php or
+
+                          Class-Name: Tx_Extbase_MVC_Controller_ActionController
+
+                          Path & Filename: typo3/sysext/extbase/Classes/MVC/Controller/ActionController.php
+Interfaces                Class name ends in „Interface“, e.g. Tx_Extbase_MVC_RequestInterface
+Abstact classes           beginning of last class name part is „Abstract“
+                          e.g. Tx_Extbase_MVC_Controller_AbstractController
+                          Domain model entity: ... extends Tx_Extbase_DomainObject_AbstractEntity
+                          Domain model value object: ... extends Tx_Extbase_DomainObject_AbstractValueObject
+=======================   =====================================
 
 =============================  ===================================
 PHPDoc annotations
@@ -110,3 +112,4 @@ Resources/Public/                                                        Additio
 -----------------------------------------------------------------------  -----------------------------------
 Tests/Unit/                                                              Unit Tests
 =======================================================================  ===================================
+
