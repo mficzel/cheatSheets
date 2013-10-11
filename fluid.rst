@@ -9,14 +9,15 @@ f:alias
 ================
 
 
-::
-  Declares new variables which are aliases of other variables.
+Declares new variables which are aliases of other variables.
  Takes a "map"-Parameter which is an associative array which defines the shorthand mapping.
 
  The variables are only declared inside the <f:alias>...</f:alias>-tag. After the
  closing tag, all declared variables are removed again.
-  Examples
-  <code title="Single alias">
+
+ = Examples =
+
+ <code title="Single alias">
  <f:alias map="{x: 'foo'}">{x}</f:alias>
  </code>
  <output>
@@ -36,7 +37,7 @@ f:alias
 ==========  ==========  ==========  ====================================================================  ==========
 Arguments
 --------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                           Default
 ==========  ==========  ==========  ====================================================================  ==========
 map         array       yes         array that specifies which variables should be mapped to which alias
 ==========  ==========  ==========  ====================================================================  ==========
@@ -45,12 +46,13 @@ f:base
 ================
 
 
-::
-  View helper which creates a <base href="..."></base> tag. The Base URI
+View helper which creates a <base href="..."></base> tag. The Base URI
  is taken from the current request.
  In TYPO3 Flow, you should always include this ViewHelper to make the links work.
-  Examples
-  <code title="Example">
+
+ = Examples =
+
+ <code title="Example">
  <f:base />
  </code>
  <output>
@@ -63,14 +65,15 @@ f:be.
 ================
 
 
-::
-  View helper which returns CSH (context sensitive help) button with icon
+View helper which returns CSH (context sensitive help) button with icon
  Note: The CSH button will only work, if the current BE user has
  the "Context Sensitive Help mode" set to something else than
  "Display no help information" in the Users settings
  Note: This view helper is experimental!
-  Examples
-  <code title="Default">
+
+ = Examples =
+
+ <code title="Default">
  <f:be.buttons.csh />
  </code>
  <output>
@@ -88,7 +91,7 @@ f:be.
 ===============  ==========  ==========  ==================================================================================  ==========
 Arguments
 ---------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name             Type        Required    Description                                                                         Default
 ===============  ==========  ==========  ==================================================================================  ==========
 table            string      no          Table name ('_MOD_'+module name). If not set, the current module name will be used
 field            string      no          Field name (CSH locallang main key)
@@ -100,10 +103,11 @@ f:be.
 ================
 
 
-::
-  View helper which returns a button icon
-  Examples
-  <code title="Default">
+View helper which returns a button icon
+
+ = Examples =
+
+ <code title="Default">
  <f:be.buttons.icon uri="{f:uri.action()}" />
  </code>
  <output>
@@ -126,7 +130,7 @@ f:be.
 ==========  ==========  ==========  ===========================================================================================================================================  ======================
 Arguments
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                                                                                  Default
 ==========  ==========  ==========  ===========================================================================================================================================  ======================
 uri         string      no          The target URI for the link. If you want to execute JavaScript here, prefix the URI with "javascript:". Leave empty to render just an icon.
 icon        string      no          Icon to be used.                                                                                                                             actions-document-close
@@ -137,11 +141,12 @@ f:be.
 ================
 
 
-::
-  View helper which returns shortcut button with icon
+View helper which returns shortcut button with icon
  Note: This view helper is experimental!
-  Examples
-  <code title="Default">
+
+ = Examples =
+
+ <code title="Default">
  <f:be.buttons.shortcut />
  </code>
  <output>
@@ -163,7 +168,7 @@ f:be.
 ==========  ==========  ==========  =============================================================================================================  ==========
 Arguments
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                                                    Default
 ==========  ==========  ==========  =============================================================================================================  ==========
 getVars     array       no          list of GET variables to store. By default the current id, module and all module arguments will be stored
 setVars     array       no          list of SET[] variables to store. See template::makeShortcutIcon(). Normally won't be used by Extbase modules
@@ -173,11 +178,12 @@ f:be.container
 ================
 
 
-::
-  View helper which allows you to create extbase based modules in the style of TYPO3 default modules.
+View helper which allows you to create extbase based modules in the style of TYPO3 default modules.
  Note: This feature is experimental!
-  Examples
-  <code title="Simple">
+
+ = Examples =
+
+ <code title="Simple">
  <f:be.container>your module content</f:be.container>
  </code>
  <output>
@@ -194,11 +200,11 @@ f:be.container
  </output>
 /
 
-===================  ==========  ==========  ===============================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+===================  ==========  ==========  ===============================================================================================  ==========
 Arguments
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-===================  ==========  ==========  ===============================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                 Type        Required    Description                                                                                      Default
+===================  ==========  ==========  ===============================================================================================  ==========
 pageTitle            string      no          $pageTitle title tag of the module. Not required by default, as BE modules are shown in a frame
 enableJumpToUrl      boolean     no          If TRUE, includes "jumpTpUrl" javascript function required by ActionMenu. Defaults to TRUE       1
 enableClickMenu      boolean     no          If TRUE, loads clickmenu.js required by BE context menus. Defaults to TRUE                       1
@@ -211,18 +217,19 @@ extJsAdapter         string      no          $extJsAdapter load alternative adap
 enableExtJsDebug     boolean     no          if TRUE, debug version of ExtJS is loaded. Use this for development only
 addCssFile           string      no          Custom CSS file to be loaded
 addJsFile            string      no          Custom JavaScript file to be loaded
-===================  ==========  ==========  ===============================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+===================  ==========  ==========  ===============================================================================================  ==========
 
 f:be.
 ================
 
 
-::
-  View helper which returns a option tag.
+View helper which returns a option tag.
  This view helper only works in conjunction with Tx_Fluid_ViewHelpers_Be_Menus_ActionMenuViewHelper
  Note: This view helper is experimental!
-  Examples
-  <code title="Simple">
+
+ = Examples =
+
+ <code title="Simple">
  <f:be.menus.actionMenu>
  <f:be.menus.actionMenuItem label="Overview" controller="Blog" action="index" />
  <f:be.menus.actionMenuItem label="Create new Blog" controller="Blog" action="new" />
@@ -247,7 +254,7 @@ f:be.
 ====================  ==========  ==========  ===============================================================================================  ==========
 Arguments
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name                  Type        Required    Description                                                                                      Default
 ====================  ==========  ==========  ===============================================================================================  ==========
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 label                 string      yes         label of the option tag
@@ -260,12 +267,13 @@ f:be.
 ================
 
 
-::
-  View helper which returns a select box, that can be used to switch between
+View helper which returns a select box, that can be used to switch between
  multiple actions and controllers and looks similar to TYPO3s funcMenu.
  Note: This view helper is experimental!
-  Examples
-  <code title="Simple">
+
+ = Examples =
+
+ <code title="Simple">
  <f:be.menus.actionMenu>
  <f:be.menus.actionMenuItem label="Overview" controller="Blog" action="index" />
  <f:be.menus.actionMenuItem label="Create new Blog" controller="Blog" action="new" />
@@ -290,7 +298,7 @@ f:be.
 ====================  ==========  ==========  =================================================================================  ==========
 Arguments
 -------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name                  Type        Required    Description                                                                        Default
 ====================  ==========  ==========  =================================================================================  ==========
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 defaultController     string      no
@@ -300,11 +308,12 @@ f:be.pageInfo
 ================
 
 
-::
-  View helper which return page info icon as known from TYPO3 backend modules
+View helper which return page info icon as known from TYPO3 backend modules
  Note: This view helper is experimental!
-  Examples
-  <code>
+
+ = Examples =
+
+ <code>
  <f:be.pageInfo />
  </code>
  <output>
@@ -317,11 +326,12 @@ f:be.pagePath
 ================
 
 
-::
-  View helper which returns the current page path as known from TYPO3 backend modules
+View helper which returns the current page path as known from TYPO3 backend modules
  Note: This view helper is experimental!
-  Examples
-  <code>
+
+ = Examples =
+
+ <code>
  <f:be.pagePath />
  </code>
  <output>
@@ -334,10 +344,11 @@ f:be.
 ================
 
 
-::
-  This view helper implements an ifAuthenticated/else condition for BE users/groups.
-  Examples
-  <code title="Basic usage">
+This view helper implements an ifAuthenticated/else condition for BE users/groups.
+
+ = Examples =
+
+ <code title="Basic usage">
  <f:be.security.ifAuthenticated>
  This is being shown whenever a BE user is logged in
  </f:be.security.ifAuthenticated>
@@ -364,7 +375,7 @@ f:be.
 ==========  ==========  ==========  =================================================  ==========
 Arguments
 -------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                        Default
 ==========  ==========  ==========  =================================================  ==========
 then        mixed       no          Value to be returned if the condition if met.
 else        mixed       no          Value to be returned if the condition if not met.
@@ -374,10 +385,11 @@ f:be.
 ================
 
 
-::
-  This view helper implements an ifHasRole/else condition for BE users/groups.
-  Examples
-  <code title="Basic usage">
+This view helper implements an ifHasRole/else condition for BE users/groups.
+
+ = Examples =
+
+ <code title="Basic usage">
  <f:be.security.ifHasRole role="Administrator">
  This is being shown in case the current BE user belongs to a BE usergroup (aka role) titled "Administrator" (case sensitive)
  </f:be.security.ifHasRole>
@@ -413,7 +425,7 @@ f:be.
 ==========  ==========  ==========  =====================================================  ==========
 Arguments
 -----------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                            Default
 ==========  ==========  ==========  =====================================================  ==========
 then        mixed       no          Value to be returned if the condition if met.
 else        mixed       no          Value to be returned if the condition if not met.
@@ -424,11 +436,12 @@ f:be.tableList
 ================
 
 
-::
-  View helper which renders a record list as known from the TYPO3 list module
+View helper which renders a record list as known from the TYPO3 list module
  Note: This feature is experimental!
-  Examples
-  <code title="Minimal">
+
+ = Examples =
+
+ <code title="Minimal">
  <f:be.tableList tableName="fe_users" />
  </code>
  <output>
@@ -447,11 +460,11 @@ f:be.tableList
  </output>
 /
 
-=========================  ==========  ==========  =================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+=========================  ==========  ==========  =================================================================================================================================================  ==========
 Arguments
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-=========================  ==========  ==========  =================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                       Type        Required    Description                                                                                                                                        Default
+=========================  ==========  ==========  =================================================================================================================================================  ==========
 tableName                  string      yes         name of the database table
 fieldList                  array       no          list of fields to be displayed. If empty, only the title column (configured in $TCA[$tableName]['ctrl']['title']) is shown
 storagePid                 integer     no          by default, records are fetched from the storage PID configured in persistence.storagePid. With this argument, the storage PID can be overwritten
@@ -464,16 +477,17 @@ readOnly                   boolean     no          if TRUE, the edit icons won't
 enableClickMenu            boolean     no          enables context menu                                                                                                                               1
 clickTitleMode             string      no          one of "edit", "show" (only pages, tt_content), "info
 alternateBackgroundColors  boolean     no          if set, rows will have alternate background colors
-=========================  ==========  ==========  =================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+=========================  ==========  ==========  =================================================================================================================================================  ==========
 
 f:be.
 ================
 
 
-::
-  This ViewHelper renders a Pagination of objects for the TYPO3 Backend.
-  Examples
-  <code title="required arguments">
+This ViewHelper renders a Pagination of objects for the TYPO3 Backend.
+
+ = Examples =
+
+ <code title="required arguments">
  <f:be.widget.paginate objects="{blogs}" as="paginatedBlogs">
  use {paginatedBlogs} as you used {blogs} before, most certainly inside
  a <f:for> loop.
@@ -487,32 +501,35 @@ f:be.
  </f:be.widget.paginate>
  The recordsLabel can be used to replace the text in "Records 1 - 99" with a label of your own choice
  </code>
-  Performance characteristics
-  In the above examples, it looks like {blogs} contains all Blog objects, thus
+
+ = Performance characteristics =
+
+ In the above examples, it looks like {blogs} contains all Blog objects, thus
  you might wonder if all objects were fetched from the database.
  However, the blogs are NOT fetched from the database until you actually use them,
  so the paginate ViewHelper will adjust the query sent to the database and receive
  only the small subset of objects.
  So, there is no negative performance overhead in using the Be Paginate Widget.
 
-=============  ==================================================  ==========  ==========  ==========
+=============  ==================================================  ==========  ===========  ==========
 Arguments
------------------------------------------------------------------------------------------------------
-Default
-=============  ==================================================  ==========  ==========  ==========
+------------------------------------------------------------------------------------------------------
+Name           Type                                                Required    Description  Default
+=============  ==================================================  ==========  ===========  ==========
 objects        TYPO3\CMS\Extbase\Persistence\QueryResultInterface  yes
 as             string                                              yes
 configuration  array                                               no
-=============  ==================================================  ==========  ==========  ==========
+=============  ==================================================  ==========  ===========  ==========
 
 f:cObject
 ================
 
 
-::
-  This ViewHelper renders CObjects from the global TypoScript configuration.
-  Examples
-  <code title="Render lib object">
+This ViewHelper renders CObjects from the global TypoScript configuration.
+
+ = Examples =
+
+ <code title="Render lib object">
  <f:cObject typoscriptObjectPath="lib.someLibObject" />
  </code>
  <output>
@@ -537,7 +554,7 @@ f:cObject
 ====================  ==========  ==========  =======================================================================================================================================  ==========
 Arguments
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name                  Type        Required    Description                                                                                                                              Default
 ====================  ==========  ==========  =======================================================================================================================================  ==========
 typoscriptObjectPath  string      yes         the TypoScript setup path of the TypoScript object to render
 data                  mixed       no          the data to be used for rendering the cObject. Can be an object, array or string. If this argument is not set, child nodes will be used
@@ -548,13 +565,14 @@ f:comment
 ================
 
 
-::
-  This ViewHelper prevents rendering of any content inside the tag
+This ViewHelper prevents rendering of any content inside the tag
  Note: Contents of the comment will still be **parsed** thus throwing an
  Exception if it contains syntax errors. You can put child nodes in
  CDATA tags to avoid this.
-  Examples
-  <code title="Commenting out fluid code">
+
+ = Examples =
+
+ <code title="Commenting out fluid code">
  Before
  <f:comment>
    This is completely hidden.
@@ -580,10 +598,11 @@ f:count
 ================
 
 
-::
-  This ViewHelper counts elements of the specified array or countable object.
-  Examples
-  <code title="Count array elements">
+This ViewHelper counts elements of the specified array or countable object.
+
+ = Examples =
+
+ <code title="Count array elements">
  <f:count subject="{0:1, 1:2, 2:3, 3:4}" />
  </code>
  <output>
@@ -600,7 +619,7 @@ f:count
 ==========  ==========  ==========  =====================================  ==========
 Arguments
 -------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                            Default
 ==========  ==========  ==========  =====================================  ==========
 subject     array       no          The array or \Countable to be counted
 ==========  ==========  ==========  =====================================  ==========
@@ -609,12 +628,13 @@ f:cycle
 ================
 
 
-::
-  This ViewHelper cycles through the specified values.
+This ViewHelper cycles through the specified values.
  This can be often used to specify CSS classes for example.
  **Note:** To achieve the "zebra class" effect in a loop you can also use the "iteration" argument of the **for** ViewHelper.
-  Examples
-  <code title="Simple">
+
+ = Examples =
+
+ <code title="Simple">
  <f:for each="{0:1, 1:2, 2:3, 3:4}" as="foo"><f:cycle values="{0: 'foo', 1: 'bar', 2: 'baz'}" as="cycle">{cycle}</f:cycle></f:for>
  </code>
  <output>
@@ -642,7 +662,7 @@ f:cycle
 ==========  ==========  ==========  =========================================================================================================================  ==========
 Arguments
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                                                                Default
 ==========  ==========  ==========  =========================================================================================================================  ==========
 values      array       yes         The array or object implementing \ArrayAccess (for example \TYPO3\CMS\Extbase\Persistence\ObjectStorage) to iterated over
 as          string      yes         The name of the iteration variable
@@ -652,10 +672,11 @@ f:debug
 ================
 
 
-::
-  This ViewHelper generates a HTML dump of the tagged variable.
-  Examples
-  <code title="Simple">
+This ViewHelper generates a HTML dump of the tagged variable.
+
+ = Examples =
+
+ <code title="Simple">
  <f:debug>{testVariables.array}</f:debug>
  </code>
  <output>
@@ -670,11 +691,11 @@ f:debug
  </output>
 /
 
-========================  ==========  ==========  =====================================================================================================================================  ==========  ==========  ==========
+========================  ==========  ==========  =====================================================================================================================================  ==========
 Arguments
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-========================  ==========  ==========  =====================================================================================================================================  ==========  ==========  ==========
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                      Type        Required    Description                                                                                                                            Default
+========================  ==========  ==========  =====================================================================================================================================  ==========
 title                     string      no          optional custom title for the debug output
 maxDepth                  integer     no          Sets the max recursion depth of the dump (defaults to 8). De- or increase the number according to your needs and memory limit.         8
 plainText                 boolean     no          If TRUE, the dump is in plain text, if FALSE the debug output is in HTML format.
@@ -682,16 +703,17 @@ ansiColors                boolean     no          If TRUE, ANSI color codes is a
 inline                    boolean     no          if TRUE, the dump is rendered at the position of the <f:debug> tag. If FALSE (default), the dump is displayed at the top of the page.
 blacklistedClassNames     array       no          An array of class names (RegEx) to be filtered. Default is an array of some common class names.
 blacklistedPropertyNames  array       no          An array of property names and/or array keys (RegEx) to be filtered. Default is an array of some common property names.
-========================  ==========  ==========  =====================================================================================================================================  ==========  ==========  ==========
+========================  ==========  ==========  =====================================================================================================================================  ==========
 
 f:else
 ================
 
 
-::
-  Else-Branch of a condition. Only has an effect inside of "If". See the If-ViewHelper for documentation.
-  Examples
-  <code title="Output content if condition is not met">
+Else-Branch of a condition. Only has an effect inside of "If". See the If-ViewHelper for documentation.
+
+ = Examples =
+
+ <code title="Output content if condition is not met">
  <f:if condition="{someCondition}">
    <f:else>
      condition was not true
@@ -708,12 +730,14 @@ f:flashMessages
 ================
 
 
-::
-  View helper which renders the flash messages (if there are any) as an unsorted list.
+View helper which renders the flash messages (if there are any) as an unsorted list.
 
  In case you need custom Flash Message HTML output, please write your own ViewHelper for the moment.
-  Examples
-  <code title="Simple">
+
+
+ = Examples =
+
+ <code title="Simple">
  <f:flashMessages />
  </code>
  <output>
@@ -744,11 +768,11 @@ f:flashMessages
  </div>
  </output>
 
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ===================================================================================================  ==========
 Arguments
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                          Default
+====================  ==========  ==========  ===================================================================================================  ==========
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 renderMode            string      no          one of the RENDER_MODE_* constants                                                                   ul
 class                 string      no          CSS class(es) for this element
@@ -760,17 +784,18 @@ title                 string      no          Tooltip text of element
 accesskey             string      no          Keyboard shortcut to access this element
 tabindex              integer     no          Specifies the tab order of this element
 onclick               string      no          JavaScript evaluated for the onclick event
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ===================================================================================================  ==========
 
 f:for
 ================
 
 
-::
-  Loop view helper which can be used to interate over array.
+Loop view helper which can be used to interate over array.
  Implements what a basic foreach()-PHP-method does.
-  Examples
-  <code title="Simple Loop">
+
+ = Examples =
+
+ <code title="Simple Loop">
  <f:for each="{0:1, 1:2, 2:3, 3:4}" as="foo">{foo}</f:for>
  </code>
  <output>
@@ -812,7 +837,7 @@ f:for
 ==========  ==========  ==========  ======================================================================================================  ==========
 Arguments
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                                             Default
 ==========  ==========  ==========  ======================================================================================================  ==========
 each        array       yes         The array or \TYPO3\CMS\Extbase\Persistence\ObjectStorage to iterated over
 as          string      yes         The name of the iteration variable
@@ -825,20 +850,25 @@ f:form
 ================
 
 
-::
-  Form view helper. Generates a <form> Tag.
-  Basic usage
-  Use <f:form> to output an HTML <form> tag which is targeted at the specified action, in the current controller and package.
+Form view helper. Generates a <form> Tag.
+
+ = Basic usage =
+
+ Use <f:form> to output an HTML <form> tag which is targeted at the specified action, in the current controller and package.
  It will submit the form data via a POST request. If you want to change this, use method="get" as an argument.
  <code title="Example">
  <f:form action="...">...</f:form>
  </code>
-  A complex form with a specified encoding type
-  <code title="Form with enctype set">
+
+ = A complex form with a specified encoding type =
+
+ <code title="Form with enctype set">
  <f:form action=".." controller="..." package="..." enctype="multipart/form-data">...</f:form>
  </code>
-  A Form which should render a domain object
-  <code title="Binding a domain object to a form">
+
+ = A Form which should render a domain object =
+
+ <code title="Binding a domain object to a form">
  <f:form action="..." name="customer" object="{customer}">
  <f:form.hidden property="id" />
  <f:form.textbox property="name" />
@@ -847,11 +877,11 @@ f:form
  This automatically inserts the value of {customer.name} inside the textbox and adjusts the name of the textbox accordingly.
 /
 
-====================================  ==========  ==========  =========================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================================  ==========  ==========  =========================================================================================================================================================  ==========
 Arguments
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================================  ==========  ==========  =========================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                                  Type        Required    Description                                                                                                                                                Default
+====================================  ==========  ==========  =========================================================================================================================================================  ==========
 additionalAttributes                  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 action                                string      no          Target action
 arguments                             array       no          Arguments
@@ -887,16 +917,17 @@ title                                 string      no          Tooltip text of el
 accesskey                             string      no          Keyboard shortcut to access this element
 tabindex                              integer     no          Specifies the tab order of this element
 onclick                               string      no          JavaScript evaluated for the onclick event
-====================================  ==========  ==========  =========================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================================  ==========  ==========  =========================================================================================================================================================  ==========
 
 f:form.button
 ================
 
 
-::
-  Creates a button.
-  Examples
-  <code title="Defaults">
+Creates a button.
+
+ = Examples =
+
+ <code title="Defaults">
  <f:form.button>Send Mail</f:form.button>
  </code>
  <output>
@@ -910,11 +941,11 @@ f:form.button
  <button disabled="disabled" formmethod="post" formnovalidate="formnovalidate" type="reset" name="myForm[buttonName]" value="buttonValue">Cancel</button>
  </output>
 
-====================  ==========  ==========  =================================================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  =================================================================================================================================================================================  ==========
 Arguments
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  =================================================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                                                                        Default
+====================  ==========  ==========  =================================================================================================================================================================================  ==========
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 type                  string      no          Specifies the type of button (e.g. "button", "reset" or "submit")                                                                                                                  submit
 name                  string      no          Name of input tag
@@ -937,16 +968,17 @@ title                 string      no          Tooltip text of element
 accesskey             string      no          Keyboard shortcut to access this element
 tabindex              integer     no          Specifies the tab order of this element
 onclick               string      no          JavaScript evaluated for the onclick event
-====================  ==========  ==========  =================================================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  =================================================================================================================================================================================  ==========
 
 f:form.checkbox
 ================
 
 
-::
-  View Helper which creates a simple checkbox (<input type="checkbox">).
-  Examples
-  <code title="Example">
+View Helper which creates a simple checkbox (<input type="checkbox">).
+
+ = Examples =
+
+ <code title="Example">
  <f:form.checkbox name="myCheckBox" value="someValue" />
  </code>
  <output>
@@ -969,11 +1001,11 @@ f:form.checkbox
  (depending on property "interests")
  </output>
 
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 Arguments
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                 Default
+====================  ==========  ==========  ==========================================================================================================================  =============
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 checked               boolean     no          Specifies that the input element should be preselected
 name                  string      no          Name of input tag
@@ -990,16 +1022,17 @@ title                 string      no          Tooltip text of element
 accesskey             string      no          Keyboard shortcut to access this element
 tabindex              integer     no          Specifies the tab order of this element
 onclick               string      no          JavaScript evaluated for the onclick event
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 
 f:form.errors
 ================
 
 
-::
-  Error messages view helper, which is deprecated in Extbase 1.4.0, with the old property mapper.
-  Examples
-  <code title="Output error messages as a list">
+Error messages view helper, which is deprecated in Extbase 1.4.0, with the old property mapper.
+
+ = Examples =
+
+ <code title="Output error messages as a list">
  <ul class="errors">
  <f:form.errors>
  <li>{error.code}: {error.message}</li>
@@ -1028,7 +1061,7 @@ f:form.errors
 ==========  ==========  ==========  ========================================================================================================================================================================================  ==========
 Arguments
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                                                                                                                               Default
 ==========  ==========  ==========  ========================================================================================================================================================================================  ==========
 for         string      no          The name of the error name (e.g. argument name or property name). This can also be a property path (like blog.title), and will then only display the validation errors of that property.
 as          string      no          The name of the variable to store the current error                                                                                                                                       error
@@ -1038,10 +1071,11 @@ f:form.hidden
 ================
 
 
-::
-  Renders an <input type="hidden" ...> tag.
-  Examples
-  <code title="Example">
+Renders an <input type="hidden" ...> tag.
+
+ = Examples =
+
+ <code title="Example">
  <f:form.hidden name="myHiddenValue" value="42" />
  </code>
  <output>
@@ -1051,11 +1085,11 @@ f:form.hidden
  You can also use the "property" attribute if you have bound an object to the form.
  See <f:form> for more documentation.
 
-====================  ==========  ==========  ==========================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  ==========
 Arguments
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ==========================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                 Default
+====================  ==========  ==========  ==========================================================================================================================  ==========
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 name                  string      no          Name of input tag
 value                 mixed       no          Value of input tag
@@ -1069,27 +1103,28 @@ title                 string      no          Tooltip text of element
 accesskey             string      no          Keyboard shortcut to access this element
 tabindex              integer     no          Specifies the tab order of this element
 onclick               string      no          JavaScript evaluated for the onclick event
-====================  ==========  ==========  ==========================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  ==========
 
 f:form.password
 ================
 
 
-::
-  View Helper which creates a simple Password Text Box (<input type="password">).
-  Examples
-  <code title="Example">
+View Helper which creates a simple Password Text Box (<input type="password">).
+
+ = Examples =
+
+ <code title="Example">
  <f:form.password name="myPassword" />
  </code>
  <output>
  <input type="password" name="myPassword" value="default value" />
  </output>
 
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 Arguments
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                 Default
+====================  ==========  ==========  ==========================================================================================================================  =============
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 name                  string      no          Name of input tag
 value                 mixed       no          Value of input tag
@@ -1108,16 +1143,17 @@ title                 string      no          Tooltip text of element
 accesskey             string      no          Keyboard shortcut to access this element
 tabindex              integer     no          Specifies the tab order of this element
 onclick               string      no          JavaScript evaluated for the onclick event
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 
 f:form.radio
 ================
 
 
-::
-  View Helper which creates a simple radio button (<input type="radio">).
-  Examples
-  <code title="Example">
+View Helper which creates a simple radio button (<input type="radio">).
+
+ = Examples =
+
+ <code title="Example">
  <f:form.radio name="myRadioButton" value="someValue" />
  </code>
  <output>
@@ -1142,11 +1178,11 @@ f:form.radio
  (depending on property "newsletter")
  </output>
 
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 Arguments
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                 Default
+====================  ==========  ==========  ==========================================================================================================================  =============
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 checked               boolean     no          Specifies that the input element should be preselected
 name                  string      no          Name of input tag
@@ -1163,31 +1199,36 @@ title                 string      no          Tooltip text of element
 accesskey             string      no          Keyboard shortcut to access this element
 tabindex              integer     no          Specifies the tab order of this element
 onclick               string      no          JavaScript evaluated for the onclick event
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 
 f:form.select
 ================
 
 
-::
-  This view helper generates a <select> dropdown list for the use with a form.
-  Basic usage
-  The most straightforward way is to supply an associative array as the "options" parameter.
+This view helper generates a <select> dropdown list for the use with a form.
+
+ = Basic usage =
+
+ The most straightforward way is to supply an associative array as the "options" parameter.
  The array key is used as option key, and the value is used as human-readable name.
 
  <code title="Basic usage">
  <f:form.select name="paymentOptions" options="{payPal: 'PayPal International Services', visa: 'VISA Card'}" />
  </code>
-  Pre-select a value
-  To pre-select a value, set "value" to the option key which should be selected.
+
+ = Pre-select a value =
+
+ To pre-select a value, set "value" to the option key which should be selected.
  <code title="Default value">
  <f:form.select name="paymentOptions" options="{payPal: 'PayPal International Services', visa: 'VISA Card'}" value="visa" />
  </code>
  Generates a dropdown box like above, except that "VISA Card" is selected.
 
  If the select box is a multi-select box (multiple="true"), then "value" can be an array as well.
-  Usage on domain objects
-  If you want to output domain objects, you can just pass them as array into the "options" parameter.
+
+ = Usage on domain objects =
+
+ If you want to output domain objects, you can just pass them as array into the "options" parameter.
  To define what domain object value should be used as option key, use the "optionValueField" variable. Same goes for optionLabelField.
  If neither is given, the Identifier (UID/uid) and the __toString() method are tried as fallbacks.
 
@@ -1206,11 +1247,11 @@ f:form.select
 
  The "value" property now expects a domain object, and tests for object equivalence.
 
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 Arguments
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                 Default
+====================  ==========  ==========  ==========================================================================================================================  =============
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 name                  string      no          Name of input tag
 value                 mixed       no          Value of input tag
@@ -1235,16 +1276,17 @@ selectAllByDefault    boolean     no          If specified options are selected 
 errorClass            string      no          CSS class to set if there are errors for this view helper                                                                   f3-form-error
 prependOptionLabel    string      no          If specified, will provide an option at first position with the specified label.
 prependOptionValue    string      no          If specified, will provide an option at first position with the specified value.
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 
 f:form.submit
 ================
 
 
-::
-  Creates a submit button.
-  Examples
-  <code title="Defaults">
+Creates a submit button.
+
+ = Examples =
+
+ <code title="Defaults">
  <f:form.submit value="Send Mail" />
  </code>
  <output>
@@ -1258,11 +1300,11 @@ f:form.submit
  <input type="submit" name="mySubmit" value="Send Mail" />
  </output>
 
-====================  ==========  ==========  ==========================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  ==========
 Arguments
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ==========================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                 Default
+====================  ==========  ==========  ==========================================================================================================================  ==========
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 name                  string      no          Name of input tag
 value                 mixed       no          Value of input tag
@@ -1277,28 +1319,29 @@ title                 string      no          Tooltip text of element
 accesskey             string      no          Keyboard shortcut to access this element
 tabindex              integer     no          Specifies the tab order of this element
 onclick               string      no          JavaScript evaluated for the onclick event
-====================  ==========  ==========  ==========================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  ==========
 
 f:form.textarea
 ================
 
 
-::
-  Textarea view helper.
+Textarea view helper.
  The value of the text area needs to be set via the "value" attribute, as with all other form ViewHelpers.
-  Examples
-  <code title="Example">
+
+ = Examples =
+
+ <code title="Example">
  <f:form.textarea name="myTextArea" value="This is shown inside the textarea" />
  </code>
  <output>
  <textarea name="myTextArea">This is shown inside the textarea</textarea>
  </output>
 
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 Arguments
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                 Default
+====================  ==========  ==========  ==========================================================================================================================  =============
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 name                  string      no          Name of input tag
 value                 mixed       no          Value of input tag
@@ -1316,27 +1359,28 @@ title                 string      no          Tooltip text of element
 accesskey             string      no          Keyboard shortcut to access this element
 tabindex              integer     no          Specifies the tab order of this element
 onclick               string      no          JavaScript evaluated for the onclick event
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 
 f:form.textfield
 ================
 
 
-::
-  View Helper which creates a text field (<input type="text">).
-  Examples
-  <code title="Example">
+View Helper which creates a text field (<input type="text">).
+
+ = Examples =
+
+ <code title="Example">
  <f:form.textfield name="myTextBox" value="default value" />
  </code>
  <output>
  <input type="text" name="myTextBox" value="default value" />
  </output>
 
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 Arguments
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                 Default
+====================  ==========  ==========  ==========================================================================================================================  =============
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 required              boolean     no          If the field is required or not
 type                  string      no          The field type, e.g. "text", "email", "url" etc.                                                                            text
@@ -1358,28 +1402,29 @@ title                 string      no          Tooltip text of element
 accesskey             string      no          Keyboard shortcut to access this element
 tabindex              integer     no          Specifies the tab order of this element
 onclick               string      no          JavaScript evaluated for the onclick event
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 
 f:form.upload
 ================
 
 
-::
-  A view helper which generates an <input type="file"> HTML element.
+A view helper which generates an <input type="file"> HTML element.
  Make sure to set enctype="multipart/form-data" on the form!
-  Examples
-  <code title="Example">
+
+ = Examples =
+
+ <code title="Example">
  <f:form.upload name="file" />
  </code>
  <output>
  <input type="file" name="file" />
  </output>
 
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 Arguments
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                 Default
+====================  ==========  ==========  ==========================================================================================================================  =============
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 name                  string      no          Name of input tag
 value                 mixed       no          Value of input tag
@@ -1395,16 +1440,17 @@ title                 string      no          Tooltip text of element
 accesskey             string      no          Keyboard shortcut to access this element
 tabindex              integer     no          Specifies the tab order of this element
 onclick               string      no          JavaScript evaluated for the onclick event
-====================  ==========  ==========  ==========================================================================================================================  =============  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==========================================================================================================================  =============
 
 f:form.validationResults
 ================
 
 
-::
-  Validation results view helper
-  Examples
-  <code title="Output error messages as a list">
+Validation results view helper
+
+ = Examples =
+
+ <code title="Output error messages as a list">
  <f:form.validationResults>
    <f:if condition="{validationResults.flattenedErrors}">
      <ul class="errors">
@@ -1447,7 +1493,7 @@ f:form.validationResults
 ==========  ==========  ==========  ========================================================================================================================================================================================  =================
 Arguments
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                                                                                                                               Default
 ==========  ==========  ==========  ========================================================================================================================================================================================  =================
 for         string      no          The name of the error name (e.g. argument name or property name). This can also be a property path (like blog.title), and will then only display the validation errors of that property.
 as          string      no          The name of the variable to store the current error                                                                                                                                       validationResults
@@ -1457,13 +1503,14 @@ f:format.cdata
 ================
 
 
-::
-  Outputs an argument/value without any escaping and wraps it with CDATA tags.
+Outputs an argument/value without any escaping and wraps it with CDATA tags.
 
  PAY SPECIAL ATTENTION TO SECURITY HERE (especially Cross Site Scripting),
  as the output is NOT SANITIZED!
-  Examples
-  <code title="Child nodes">
+
+ = Examples =
+
+ <code title="Child nodes">
  <f:format.cdata>{string}</f:format.cdata>
  </code>
  <output>
@@ -1487,7 +1534,7 @@ f:format.cdata
 ==========  ==========  ==========  ===================  ==========
 Arguments
 -------------------------------------------------------------------
-Default
+Name        Type        Required    Description          Default
 ==========  ==========  ==========  ===================  ==========
 value       mixed       no          The value to output
 ==========  ==========  ==========  ===================  ==========
@@ -1496,10 +1543,11 @@ f:format.crop
 ================
 
 
-::
-  Use this view helper to crop the text between its opening and closing tags.
-  Examples
-  <code title="Defaults">
+Use this view helper to crop the text between its opening and closing tags.
+
+ = Examples =
+
+ <code title="Defaults">
  <f:format.crop maxCharacters="10">This is some very long text</f:format.crop>
  </code>
  <output>
@@ -1539,7 +1587,7 @@ f:format.crop
 =====================  ==========  ==========  ====================================================================================================================================  ==========
 Arguments
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name                   Type        Required    Description                                                                                                                           Default
 =====================  ==========  ==========  ====================================================================================================================================  ==========
 maxCharacters          integer     yes         Place where to truncate the string
 append                 string      no          What to append, if truncation happened                                                                                                ...
@@ -1551,10 +1599,11 @@ f:format.currency
 ================
 
 
-::
-  Formats a given float to a currency representation.
-  Examples
-  <code title="Defaults">
+Formats a given float to a currency representation.
+
+ = Examples =
+
+ <code title="Defaults">
  <f:format.currency>123.456</f:format.currency>
  </code>
  <output>
@@ -1576,27 +1625,28 @@ f:format.currency
  (depending on the value of {someNumber})
  </output>
 
-==================  ==========  ==========  ========================================================================================================================  ==========  ==========
+==================  ==========  ==========  ========================================================================================================================  ==========
 Arguments
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-==================  ==========  ==========  ========================================================================================================================  ==========  ==========
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                Type        Required    Description                                                                                                               Default
+==================  ==========  ==========  ========================================================================================================================  ==========
 currencySign        string      no          (optional) The currency sign, eg $ or €.
 decimalSeparator    string      no          (optional) The separator for the decimal point.                                                                           ,
 thousandsSeparator  string      no          (optional) The thousands separator.                                                                                       .
 prependCurrency     boolean     no          (optional) Select if the curreny sign should be prepended
 separateCurrency    boolean     no          (optional) Separate the currency sign from the number by a single space, defaults to true due to backwards compatibility  1
 decimals            int         no          (optional) Set decimals places.                                                                                           2
-==================  ==========  ==========  ========================================================================================================================  ==========  ==========
+==================  ==========  ==========  ========================================================================================================================  ==========
 
 f:format.date
 ================
 
 
-::
-  Formats a \DateTime object.
-  Examples
-  <code title="Defaults">
+Formats a \DateTime object.
+
+ = Examples =
+
+ <code title="Defaults">
  <f:format.date>{dateObject}</f:format.date>
  </code>
  <output>
@@ -1625,7 +1675,7 @@ f:format.date
 ==========  ==========  ==========  =============================================================================  ==========
 Arguments
 -----------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                    Default
 ==========  ==========  ==========  =============================================================================  ==========
 date        mixed       no          either a DateTime object or a string that is accepted by DateTime constructor
 format      string      no          Format String which is taken to format the Date/Time                           Y-m-d
@@ -1635,8 +1685,7 @@ f:format.html
 ================
 
 
-::
-  Renders a string by passing it to a TYPO3 parseFunc.
+Renders a string by passing it to a TYPO3 parseFunc.
  You can either specify a path to the TypoScript setting or set the parseFunc options directly.
  By default lib.parseFunc_RTE is used to parse the string.
 
@@ -1667,7 +1716,7 @@ f:format.html
 ===============  ==========  ==========  ===================================  =================
 Arguments
 -----------------------------------------------------------------------------------------------
-Default
+Name             Type        Required    Description                          Default
 ===============  ==========  ==========  ===================================  =================
 parseFuncTSPath  string      no          path to TypoScript parseFunc setup.  lib.parseFunc_RTE
 ===============  ==========  ==========  ===================================  =================
@@ -1676,13 +1725,12 @@ f:format.htmlentitiesDecode
 ================
 
 
-::
-  Applies html_entity_decode() to a value
+Applies html_entity_decode() to a value
 
 ==========  ==========  ==========  ============================================================================  ==========
 Arguments
 ----------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                   Default
 ==========  ==========  ==========  ============================================================================  ==========
 value       string      no          string to format
 keepQuotes  boolean     no          if TRUE, single and double quotes won't be replaced (sets ENT_NOQUOTES flag)
@@ -1693,13 +1741,12 @@ f:format.htmlentities
 ================
 
 
-::
-  Applies htmlentities() escaping to a value
+Applies htmlentities() escaping to a value
 
 ============  ==========  ==========  =======================================================================================  ==========
 Arguments
 -----------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name          Type        Required    Description                                                                              Default
 ============  ==========  ==========  =======================================================================================  ==========
 value         string      no          string to format
 keepQuotes    boolean     no          if TRUE, single and double quotes won't be replaced (sets ENT_NOQUOTES flag)
@@ -1711,13 +1758,12 @@ f:format.htmlspecialchars
 ================
 
 
-::
-  Applies htmlspecialchars() escaping to a value
+Applies htmlspecialchars() escaping to a value
 
 ============  ==========  ==========  =======================================================================================  ==========
 Arguments
 -----------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name          Type        Required    Description                                                                              Default
 ============  ==========  ==========  =======================================================================================  ==========
 value         string      no          string to format
 keepQuotes    boolean     no          if TRUE, single and double quotes won't be replaced (sets ENT_NOQUOTES flag)
@@ -1729,21 +1775,19 @@ f:format.nl2br
 ================
 
 
-::
-  Wrapper for PHPs nl2br function.
+Wrapper for PHPs nl2br function.
 
 No arguments defined.
 f:format.number
 ================
 
 
-::
-  Formats a number with custom precision, decimal point and grouped thousands.
+Formats a number with custom precision, decimal point and grouped thousands.
 
 ==================  ==========  ==========  ==============================================  ==========
 Arguments
 ------------------------------------------------------------------------------------------------------
-Default
+Name                Type        Required    Description                                     Default
 ==================  ==========  ==========  ==============================================  ==========
 decimals            integer     no          The number of digits after the decimal point    2
 decimalSeparator    string      no          The decimal point character                     .
@@ -1754,13 +1798,12 @@ f:format.padding
 ================
 
 
-::
-  Formats a string using PHPs str_pad function.
+Formats a string using PHPs str_pad function.
 
 ==========  ==========  ==========  ===========================================================================================================================================  ==========
 Arguments
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                                                                                  Default
 ==========  ==========  ==========  ===========================================================================================================================================  ==========
 padLength   integer     yes         Length of the resulting string. If the value of pad_length is negative or less than the length of the input string, no padding takes place.
 padString   string      no          The padding string
@@ -1771,12 +1814,13 @@ f:format.printf
 ================
 
 
-::
-  A view helper for formatting values with printf. Either supply an array for
+A view helper for formatting values with printf. Either supply an array for
  the arguments or a single value.
  See http://www.php.net/manual/en/function.sprintf.php
-  Examples
-  <code title="Scientific notation">
+
+ = Examples =
+
+ <code title="Scientific notation">
  <f:format.printf arguments="{number: 362525200}">%.3e</f:format.printf>
  </code>
  <output>
@@ -1807,7 +1851,7 @@ f:format.printf
 ==========  ==========  ==========  ==========================  ==========
 Arguments
 --------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                 Default
 ==========  ==========  ==========  ==========================  ==========
 arguments   array       yes         The arguments for vsprintf
 ==========  ==========  ==========  ==========================  ==========
@@ -1816,14 +1860,15 @@ f:format.raw
 ================
 
 
-::
-  Outputs an argument/value without any escaping. Is normally used to output
+Outputs an argument/value without any escaping. Is normally used to output
  an ObjectAccessor which should not be escaped, but output as-is.
 
  PAY SPECIAL ATTENTION TO SECURITY HERE (especially Cross Site Scripting),
  as the output is NOT SANITIZED!
-  Examples
-  <code title="Child nodes">
+
+ = Examples =
+
+ <code title="Child nodes">
  <f:format.raw>{string}</f:format.raw>
  </code>
  <output>
@@ -1847,7 +1892,7 @@ f:format.raw
 ==========  ==========  ==========  ===================  ==========
 Arguments
 -------------------------------------------------------------------
-Default
+Name        Type        Required    Description          Default
 ==========  ==========  ==========  ===================  ==========
 value       mixed       no          The value to output
 ==========  ==========  ==========  ===================  ==========
@@ -1856,13 +1901,12 @@ f:format.stripTags
 ================
 
 
-::
-  Removes tags from the given string (applying PHPs strip_tags() function)
+Removes tags from the given string (applying PHPs strip_tags() function)
 
 ==========  ==========  ==========  ================  ==========
 Arguments
 ----------------------------------------------------------------
-Default
+Name        Type        Required    Description       Default
 ==========  ==========  ==========  ================  ==========
 value       string      no          string to format
 ==========  ==========  ==========  ================  ==========
@@ -1871,13 +1915,12 @@ f:format.urlencode
 ================
 
 
-::
-  Encodes the given string according to http://www.faqs.org/rfcs/rfc3986.html (applying PHPs rawurlencode() function)
+Encodes the given string according to http://www.faqs.org/rfcs/rfc3986.html (applying PHPs rawurlencode() function)
 
 ==========  ==========  ==========  ================  ==========
 Arguments
 ----------------------------------------------------------------
-Default
+Name        Type        Required    Description       Default
 ==========  ==========  ==========  ================  ==========
 value       string      no          string to format
 ==========  ==========  ==========  ================  ==========
@@ -1886,13 +1929,14 @@ f:groupedFor
 ================
 
 
-::
-  Grouped loop view helper.
+Grouped loop view helper.
  Loops through the specified values.
 
  The groupBy argument also supports property paths.
-  Examples
-  <code title="Simple">
+
+ = Examples =
+
+ <code title="Simple">
  <f:groupedFor each="{0: {name: 'apple', color: 'green'}, 1: {name: 'cherry', color: 'red'}, 2: {name: 'banana', color: 'yellow'}, 3: {name: 'strawberry', color: 'red'}}" as="fruitsOfThisColor" groupBy="color">
    <f:for each="{fruitsOfThisColor}" as="fruit">
      {fruit.name}
@@ -1943,7 +1987,7 @@ f:groupedFor
 ==========  ==========  ==========  ==========================================================================  ==========
 Arguments
 --------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                 Default
 ==========  ==========  ==========  ==========================================================================  ==========
 each        array       yes         The array or \TYPO3\CMS\Extbase\Persistence\ObjectStorage to iterated over
 as          string      yes         The name of the iteration variable
@@ -1955,8 +1999,7 @@ f:if
 ================
 
 
-::
-  This view helper implements an if/else condition.
+This view helper implements an if/else condition.
  Check \TYPO3\CMS\Fluid\Core\Parser\SyntaxTree\ViewHelperNode::convertArgumentValue() to see how boolean arguments are evaluated
 
  **Conditions:**
@@ -1987,8 +2030,10 @@ f:if
    <f:if condition="{foo.bar} == 'stringToCompare'">
      Will result true if {foo.bar}'s represented value equals 'stringToCompare'.
    </f:if>
-  Examples
-  <code title="Basic usage">
+
+ = Examples =
+
+ <code title="Basic usage">
  <f:if condition="somecondition">
    This is being shown in case the condition matches
  </f:if>
@@ -2023,7 +2068,7 @@ f:if
 ==========  ==========  ==========  =================================================  ==========
 Arguments
 -------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                        Default
 ==========  ==========  ==========  =================================================  ==========
 then        mixed       no          Value to be returned if the condition if met.
 else        mixed       no          Value to be returned if the condition if not met.
@@ -2034,10 +2079,11 @@ f:image
 ================
 
 
-::
-  Resizes a given image (if required) and renders the respective img tag
-  Examples
-  <code title="Default">
+Resizes a given image (if required) and renders the respective img tag
+
+ = Examples =
+
+ <code title="Default">
  <f:image src="EXT:myext/Resources/Public/typo3_logo.png" alt="alt text" />
  </code>
  <output>
@@ -2062,11 +2108,11 @@ f:image
  </output>
 /
 
-====================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========
 Arguments
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                                                                                                                                                         Default
+====================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 src                   string      yes
 width                 string      no          width of the image. This can be a numeric value representing the fixed width of the image in pixels. But you can also perform simple calculations by adding "m" or "c" to the value. See imgResource.width for possible options.
@@ -2089,16 +2135,17 @@ alt                   string      yes         Specifies an alternate text for an
 ismap                 string      no          Specifies an image as a server-side image-map. Rarely used. Look at usemap instead
 longdesc              string      no          Specifies the URL to a document that contains a long description of an image
 usemap                string      no          Specifies an image as a client-side image-map
-====================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========
 
 f:layout
 ================
 
 
-::
-  With this tag, you can select a layout to be used for the current template.
-  Examples
-  <code>
+With this tag, you can select a layout to be used for the current template.
+
+ = Examples =
+
+ <code>
  <f:layout name="main" />
  </code>
  <output>
@@ -2108,7 +2155,7 @@ f:layout
 ==========  ==========  ==========  ========================================================  ==========
 Arguments
 --------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                               Default
 ==========  ==========  ==========  ========================================================  ==========
 name        string      yes         Name of layout to use. If none given, "Default" is used.
 ==========  ==========  ==========  ========================================================  ==========
@@ -2117,10 +2164,11 @@ f:link.action
 ================
 
 
-::
-  A view helper for creating links to extbase actions.
-  Examples
-  <code title="link to the show-action of the current controller">
+A view helper for creating links to extbase actions.
+
+ = Examples =
+
+ <code title="link to the show-action of the current controller">
  <f:link.action action="show">action link</f:link.action>
  </code>
  <output>
@@ -2129,11 +2177,11 @@ f:link.action
  </output>
 /
 
-====================================  ==========  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================================  ==========  ==========  ======================================================================================================================  ==========
 Arguments
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================================  ==========  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                                  Type        Required    Description                                                                                                             Default
+====================================  ==========  ==========  ======================================================================================================================  ==========
 additionalAttributes                  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 action                                string      no          Target action
 arguments                             array       no          Arguments
@@ -2164,25 +2212,24 @@ name                                  string      no          Specifies the name
 rel                                   string      no          Specifies the relationship between the current document and the linked document
 rev                                   string      no          Specifies the relationship between the linked document and the current document
 target                                string      no          Specifies where to open the linked document
-====================================  ==========  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================================  ==========  ==========  ======================================================================================================================  ==========
 
 f:link.email
 ================
 
 
-::
-  Email link view helper.
+Email link view helper.
  Generates an email link incorporating TYPO3s spamProtectEmailAddresses-settings.
 
  = Examples
 
  <code title="basic email link">
 
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ===================================================================================================  ==========
 Arguments
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                          Default
+====================  ==========  ==========  ===================================================================================================  ==========
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 email                 string      yes         The email address to be turned into a link.
 class                 string      no          CSS class(es) for this element
@@ -2198,16 +2245,17 @@ name                  string      no          Specifies the name of an anchor
 rel                   string      no          Specifies the relationship between the current document and the linked document
 rev                   string      no          Specifies the relationship between the linked document and the current document
 target                string      no          Specifies where to open the linked document
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ===================================================================================================  ==========
 
 f:link.external
 ================
 
 
-::
-  A view helper for creating links to external targets.
-  Examples
-  <code>
+A view helper for creating links to external targets.
+
+ = Examples =
+
+ <code>
  <f:link.external uri="http://www.typo3.org" target="_blank">external link</f:link.external>
  </code>
  <output>
@@ -2221,11 +2269,11 @@ f:link.external
  <a href="ftp://typo3.org">external ftp link</a>
  </output>
 
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ===================================================================================================  ==========
 Arguments
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                          Default
+====================  ==========  ==========  ===================================================================================================  ==========
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 uri                   string      yes         the URI that will be put in the href attribute of the rendered link tag
 defaultScheme         string      no          scheme the href attribute will be prefixed with if specified $uri does not contain a scheme already  http
@@ -2242,16 +2290,17 @@ name                  string      no          Specifies the name of an anchor
 rel                   string      no          Specifies the relationship between the current document and the linked document
 rev                   string      no          Specifies the relationship between the linked document and the current document
 target                string      no          Specifies where to open the linked document
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ===================================================================================================  ==========
 
 f:link.page
 ================
 
 
-::
-  A view helper for creating links to TYPO3 pages.
-  Examples
-  <code title="link to the current page">
+A view helper for creating links to TYPO3 pages.
+
+ = Examples =
+
+ <code title="link to the current page">
  <f:link.page>page link</f:link.page>
  </code>
  <output>
@@ -2276,11 +2325,11 @@ f:link.page
  </output>
 /
 
-====================================  ============  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================================  ============  ==========  ======================================================================================================================  ==========
 Arguments
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================================  ============  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                                  Type          Required    Description                                                                                                             Default
+====================================  ============  ==========  ======================================================================================================================  ==========
 additionalAttributes                  array         no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 pageUid                               integer|NULL  no          target page. See TypoLink destination
 additionalParams                      array         no          query parameters to be attached to the resulting URI
@@ -2303,33 +2352,31 @@ tabindex                              integer       no          Specifies the ta
 onclick                               string        no          JavaScript evaluated for the onclick event
 target                                string        no          Target of link
 rel                                   string        no          Specifies the relationship between the current document and the linked document
-====================================  ============  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================================  ============  ==========  ======================================================================================================================  ==========
 
 f:renderChildren
 ================
 
 
-::
-  Render the inner parts of a Widget.
+Render the inner parts of a Widget.
  This ViewHelper can only be used in a template which belongs to a Widget Controller.
 
  It renders everything inside the Widget ViewHelper, and you can pass additional
  arguments.
 
-==========  ==========  ==========  ==========  ==========
+==========  ==========  ==========  ===========  ==========
 Arguments
-----------------------------------------------------------
-Default
-==========  ==========  ==========  ==========  ==========
+-----------------------------------------------------------
+Name        Type        Required    Description  Default
+==========  ==========  ==========  ===========  ==========
 arguments   array       no
-==========  ==========  ==========  ==========  ==========
+==========  ==========  ==========  ===========  ==========
 
 f:render
 ================
 
 
-::
-  ViewHelper that renders a section or a specified partial
+ViewHelper that renders a section or a specified partial
 
  == Examples ==
 
@@ -2387,7 +2434,7 @@ f:render
 ==========  ==========  ==========  ===================================================================================================================================================================  ==========
 Arguments
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                                                                                                                          Default
 ==========  ==========  ==========  ===================================================================================================================================================================  ==========
 section     string      no          Name of section to render. If used in a layout, renders a section of the main content file. If used inside a standard template, renders a section of the same file.
 partial     string      no          Reference to a partial.
@@ -2399,8 +2446,7 @@ f:section
 ================
 
 
-::
-  A Section view helper
+A Section view helper
 
  == Examples ==
 
@@ -2442,7 +2488,7 @@ f:section
 ==========  ==========  ==========  ===================  ==========
 Arguments
 -------------------------------------------------------------------
-Default
+Name        Type        Required    Description          Default
 ==========  ==========  ==========  ===================  ==========
 name        string      yes         Name of the section
 ==========  ==========  ==========  ===================  ==========
@@ -2451,10 +2497,11 @@ f:security.ifAuthenticated
 ================
 
 
-::
-  This view helper implements an ifAuthenticated/else condition for FE users/groups.
-  Examples
-  <code title="Basic usage">
+This view helper implements an ifAuthenticated/else condition for FE users/groups.
+
+ = Examples =
+
+ <code title="Basic usage">
  <f:security.ifAuthenticated>
  This is being shown whenever a FE user is logged in
  </f:security.ifAuthenticated>
@@ -2481,7 +2528,7 @@ f:security.ifAuthenticated
 ==========  ==========  ==========  =================================================  ==========
 Arguments
 -------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                        Default
 ==========  ==========  ==========  =================================================  ==========
 then        mixed       no          Value to be returned if the condition if met.
 else        mixed       no          Value to be returned if the condition if not met.
@@ -2491,10 +2538,11 @@ f:security.ifHasRole
 ================
 
 
-::
-  This view helper implements an ifHasRole/else condition for FE users/groups.
-  Examples
-  <code title="Basic usage">
+This view helper implements an ifHasRole/else condition for FE users/groups.
+
+ = Examples =
+
+ <code title="Basic usage">
  <f:security.ifHasRole role="Administrator">
  This is being shown in case the current FE user belongs to a FE usergroup (aka role) titled "Administrator" (case sensitive)
  </f:security.ifHasRole>
@@ -2530,7 +2578,7 @@ f:security.ifHasRole
 ==========  ==========  ==========  =====================================================  ==========
 Arguments
 -----------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                            Default
 ==========  ==========  ==========  =====================================================  ==========
 then        mixed       no          Value to be returned if the condition if met.
 else        mixed       no          Value to be returned if the condition if not met.
@@ -2541,16 +2589,14 @@ f:then
 ================
 
 
-::
-  "THEN" -> only has an effect inside of "IF". See If-ViewHelper for documentation.
+"THEN" -> only has an effect inside of "IF". See If-ViewHelper for documentation.
 
 No arguments defined.
 f:translate
 ================
 
 
-::
-  Translate a key from locallang. The files are loaded from the folder
+Translate a key from locallang. The files are loaded from the folder
  "Resources/Private/Language/".
 
  == Examples ==
@@ -2601,27 +2647,28 @@ f:translate
  </output>
 /
 
-=============  ==========  ==========  ==============================================================================================================================================  ==========  ==========
+=============  ==========  ==========  ==============================================================================================================================================  ==========
 Arguments
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-=============  ==========  ==========  ==============================================================================================================================================  ==========  ==========
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name           Type        Required    Description                                                                                                                                     Default
+=============  ==========  ==========  ==============================================================================================================================================  ==========
 key            string      no          Translation Key
 id             string      no          Translation Key compatible to TYPO3 Flow
 default        string      no          if the given locallang key could not be found, this value is used. If this argument is not set, child nodes will be used to render the default
 htmlEscape     boolean     no          TRUE if the result should be htmlescaped. This won't have an effect for the default value
 arguments      array       no          Arguments to be replaced in the resulting string
 extensionName  string      no          UpperCamelCased extension key (for example BlogExample)
-=============  ==========  ==========  ==============================================================================================================================================  ==========  ==========
+=============  ==========  ==========  ==============================================================================================================================================  ==========
 
 f:uri.action
 ================
 
 
-::
-  A view helper for creating URIs to extbase actions.
-  Examples
-  <code title="URI to the show-action of the current controller">
+A view helper for creating URIs to extbase actions.
+
+ = Examples =
+
+ <code title="URI to the show-action of the current controller">
  <f:uri.action action="show" />
  </code>
  <output>
@@ -2630,11 +2677,11 @@ f:uri.action
  </output>
 /
 
-====================================  ==========  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================================  ==========  ==========  ======================================================================================================================  ==========
 Arguments
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================================  ==========  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                                  Type        Required    Description                                                                                                             Default
+====================================  ==========  ==========  ======================================================================================================================  ==========
 action                                string      no          Target action
 arguments                             array       no          Arguments
 controller                            string      no          Target controller. If NULL current controllerName is used
@@ -2651,14 +2698,13 @@ additionalParams                      array       no          additional query p
 absolute                              boolean     no          If set, an absolute URI is rendered
 addQueryString                        boolean     no          If set, the current query parameters will be kept in the URI
 argumentsToBeExcludedFromQueryString  array       no          arguments to be removed from the URI. Only active if $addQueryString = TRUE
-====================================  ==========  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================================  ==========  ==========  ======================================================================================================================  ==========
 
 f:uri.email
 ================
 
 
-::
-  Email URI view helper.
+Email URI view helper.
  Generates an email URI incorporating TYPO3s spamProtectEmailAddresses-settings.
 
  = Examples
@@ -2668,7 +2714,7 @@ f:uri.email
 ==========  ==========  ==========  =========================================  ==========
 Arguments
 -----------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                Default
 ==========  ==========  ==========  =========================================  ==========
 email       string      yes         The email address to be turned into a URI
 ==========  ==========  ==========  =========================================  ==========
@@ -2677,11 +2723,12 @@ f:uri.external
 ================
 
 
-::
-  A view helper for creating URIs to external targets.
+A view helper for creating URIs to external targets.
  Currently the specified URI is simply passed through.
-  Examples
-  <code>
+
+ = Examples =
+
+ <code>
  <f:uri.external uri="http://www.typo3.org" />
  </code>
  <output>
@@ -2698,7 +2745,7 @@ f:uri.external
 =============  ==========  ==========  ===================================================================================================  ==========
 Arguments
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name           Type        Required    Description                                                                                          Default
 =============  ==========  ==========  ===================================================================================================  ==========
 uri            string      yes         target URI
 defaultScheme  string      no          scheme the href attribute will be prefixed with if specified $uri does not contain a scheme already  http
@@ -2708,10 +2755,11 @@ f:uri.image
 ================
 
 
-::
-  Resizes a given image (if required) and returns its relative path.
-  Examples
-  <code title="Default">
+Resizes a given image (if required) and returns its relative path.
+
+ = Examples =
+
+ <code title="Default">
  <f:uri.image src="EXT:myext/Resources/Public/typo3_logo.png" />
  </code>
  <output>
@@ -2736,11 +2784,11 @@ f:uri.image
  </output>
 /
 
-==================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========  ==========  ==========  ==========
+==================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========
 Arguments
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-==================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========  ==========  ==========  ==========
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                Type        Required    Description                                                                                                                                                                                                                         Default
+==================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========
 src                 string      yes
 width               string      no          width of the image. This can be a numeric value representing the fixed width of the image in pixels. But you can also perform simple calculations by adding "m" or "c" to the value. See imgResource.width for possible options.
 height              string      no          height of the image. This can be a numeric value representing the fixed height of the image in pixels. But you can also perform simple calculations by adding "m" or "c" to the value. See imgResource.width for possible options.
@@ -2749,16 +2797,17 @@ minHeight           integer     no          minimum height of the image
 maxWidth            integer     no          maximum width of the image
 maxHeight           integer     no          maximum height of the image
 treatIdAsReference  boolean     no          given src argument is a sys_file_reference record
-==================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========  ==========  ==========  ==========
+==================  ==========  ==========  ==================================================================================================================================================================================================================================  ==========
 
 f:uri.page
 ================
 
 
-::
-  A view helper for creating URIs to TYPO3 pages.
-  Examples
-  <code title="URI to the current page">
+A view helper for creating URIs to TYPO3 pages.
+
+ = Examples =
+
+ <code title="URI to the current page">
  <f:uri.page>page link</f:uri.page>
  </code>
  <output>
@@ -2783,11 +2832,11 @@ f:uri.page
  </output>
 /
 
-====================================  ============  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========
+====================================  ============  ==========  ======================================================================================================================  ==========
 Arguments
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================================  ============  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                                  Type          Required    Description                                                                                                             Default
+====================================  ============  ==========  ======================================================================================================================  ==========
 pageUid                               integer|NULL  no          target PID
 additionalParams                      array         no          query parameters to be attached to the resulting URI
 pageType                              integer       no          type of the target page. See typolink.parameter                                                                         0
@@ -2798,16 +2847,17 @@ linkAccessRestrictedPages             boolean       no          If set, links po
 absolute                              boolean       no          If set, the URI of the rendered link is absolute
 addQueryString                        boolean       no          If set, the current query parameters will be kept in the URI
 argumentsToBeExcludedFromQueryString  array         no          arguments to be removed from the URI. Only active if $addQueryString = TRUE
-====================================  ============  ==========  ======================================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========
+====================================  ============  ==========  ======================================================================================================================  ==========
 
 f:uri.resource
 ================
 
 
-::
-  A view helper for creating URIs to resources.
-  Examples
-  <code title="Defaults">
+A view helper for creating URIs to resources.
+
+ = Examples =
+
+ <code title="Defaults">
  <link href="{f:uri.resource(path:'css/stylesheet.css')}" rel="stylesheet" />
  </code>
  <output>
@@ -2819,7 +2869,7 @@ f:uri.resource
 =============  ==========  ==========  ===============================================================================================  ==========
 Arguments
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Default
+Name           Type        Required    Description                                                                                      Default
 =============  ==========  ==========  ===============================================================================================  ==========
 path           string      yes         The path and filename of the resource (relative to Public resource directory of the extension).
 extensionName  string      no          Target extension name. If not set, the current extension name will be used
@@ -2830,16 +2880,17 @@ f:widget.autocomplete
 ================
 
 
-::
-  Simple paginate widget
+Simple paginate widget
  Note: Make sure to include jQuery and jQuery UI in the HTML, like that:
  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/base/jquery-ui.css" type="text/css" media="all" />
  <link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
  You can include the provided TS template that includes the above snippet to the pages headerData.
-  Examples
-  <code title="Render lib object">
+
+ = Examples =
+
+ <code title="Render lib object">
  <input type="text" id="name" />
  <f:widget.autocomplete for="name" objects="{posts}" searchProperty="author">
  </code>
@@ -2848,24 +2899,25 @@ f:widget.autocomplete
  the input field and the required JavaScript for the Ajax communication (see Resources/Private/Templates/ViewHelpers/Widget/Autocomplete/Index.html
  </output>
 
-==============  =================================================  ==========  ==========  ==========
+==============  =================================================  ==========  ===========  ==========
 Arguments
------------------------------------------------------------------------------------------------------
-Default
-==============  =================================================  ==========  ==========  ==========
+------------------------------------------------------------------------------------------------------
+Name            Type                                               Required    Description  Default
+==============  =================================================  ==========  ===========  ==========
 objects         TYPO3\CMS\Extbase\Persistence\Generic\QueryResult  yes
 for             string                                             yes
 searchProperty  string                                             yes
-==============  =================================================  ==========  ==========  ==========
+==============  =================================================  ==========  ===========  ==========
 
 f:widget.link
 ================
 
 
-::
-  A view helper for creating Links to extbase actions within widets.
-  Examples
-  <code title="URI to the show-action of the current controller">
+A view helper for creating Links to extbase actions within widets.
+
+ = Examples =
+
+ <code title="URI to the show-action of the current controller">
  <f:widget.link action="show">link</f:widget.link>
  </code>
  <output>
@@ -2873,11 +2925,11 @@ f:widget.link
  (depending on the current page, widget and your TS configuration)
  </output>
 
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ===================================================================================================  ==========
 Arguments
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name                  Type        Required    Description                                                                                          Default
+====================  ==========  ==========  ===================================================================================================  ==========
 additionalAttributes  array       no          Additional tag attributes. They will be added directly to the resulting HTML tag.
 action                string      no          Target action
 arguments             array       no          Arguments
@@ -2897,16 +2949,17 @@ name                  string      no          Specifies the name of an anchor
 rel                   string      no          Specifies the relationship between the current document and the linked document
 rev                   string      no          Specifies the relationship between the linked document and the current document
 target                string      no          Specifies where to open the linked document
-====================  ==========  ==========  ===================================================================================================  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========  ==========
+====================  ==========  ==========  ===================================================================================================  ==========
 
 f:widget.paginate
 ================
 
 
-::
-  This ViewHelper renders a Pagination of objects.
-  Examples
-  <code title="required arguments">
+This ViewHelper renders a Pagination of objects.
+
+ = Examples =
+
+ <code title="required arguments">
  <f:widget.paginate objects="{blogs}" as="paginatedBlogs">
  use {paginatedBlogs} as you used {blogs} before, most certainly inside
  a <f:for> loop.
@@ -2919,32 +2972,35 @@ f:widget.paginate
  a <f:for> loop.
  </f:widget.paginate>
  </code>
-  Performance characteristics
-  In the above examples, it looks like {blogs} contains all Blog objects, thus
+
+ = Performance characteristics =
+
+ In the above examples, it looks like {blogs} contains all Blog objects, thus
  you might wonder if all objects were fetched from the database.
  However, the blogs are NOT fetched from the database until you actually use them,
  so the paginate ViewHelper will adjust the query sent to the database and receive
  only the small subset of objects.
  So, there is no negative performance overhead in using the Paginate Widget.
 
-=============  ==================================================  ==========  ==========  ==========
+=============  ==================================================  ==========  ===========  ==========
 Arguments
------------------------------------------------------------------------------------------------------
-Default
-=============  ==================================================  ==========  ==========  ==========
+------------------------------------------------------------------------------------------------------
+Name           Type                                                Required    Description  Default
+=============  ==================================================  ==========  ===========  ==========
 objects        TYPO3\CMS\Extbase\Persistence\QueryResultInterface  yes
 as             string                                              yes
 configuration  array                                               no
-=============  ==================================================  ==========  ==========  ==========
+=============  ==================================================  ==========  ===========  ==========
 
 f:widget.uri
 ================
 
 
-::
-  A view helper for creating URIs to extbase actions within widgets.
-  Examples
-  <code title="URI to the show-action of the current controller">
+A view helper for creating URIs to extbase actions within widgets.
+
+ = Examples =
+
+ <code title="URI to the show-action of the current controller">
  <f:widget.uri action="show" />
  </code>
  <output>
@@ -2955,7 +3011,7 @@ f:widget.uri
 ==========  ==========  ==========  =============================================================  ==========
 Arguments
 -------------------------------------------------------------------------------------------------------------
-Default
+Name        Type        Required    Description                                                    Default
 ==========  ==========  ==========  =============================================================  ==========
 action      string      no          Target action
 arguments   array       no          Arguments
