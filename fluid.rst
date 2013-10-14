@@ -37,7 +37,7 @@ code:Multiple mappings
   
 ::
 
-  [name] or [name]
+  \[name\] or \[name\]
   depending on {foo.bar.baz}
   
 
@@ -204,7 +204,7 @@ code:Explicitly set parameters to be stored in the shortcut
 ::
 
   Shortcut button as known from the TYPO3 backend.
-  This time only the specified GET parameters and SET[]-settings will be stored.
+  This time only the specified GET parameters and SET\[\]-settings will be stored.
   Note:
   Normally you won't need to set getVars & setVars parameters in Extbase modules
   
@@ -730,9 +730,9 @@ code:Prevent parsing
 
 ::
 
-  <f:comment><![CDATA[
+  <f:comment><!\[CDATA\[
    <f:some.invalid.syntax />
-  ]]></f:comment>
+  \]\]></f:comment>
   
 ::
 
@@ -861,7 +861,7 @@ code:All Features
   
 ::
 
-  [A HTML view of the var_dump]
+  \[A HTML view of the var_dump\]
   
 /
 
@@ -1170,7 +1170,7 @@ code:Disabled cancel button with some HTML5 attributes
   
 ::
 
-  <button disabled="disabled" formmethod="post" formnovalidate="formnovalidate" type="reset" name="myForm[buttonName]" value="buttonValue">Cancel</button>
+  <button disabled="disabled" formmethod="post" formnovalidate="formnovalidate" type="reset" name="myForm\[buttonName\]" value="buttonValue">Cancel</button>
   
 
 ====================  ==========  ==========  =================================================================================================================================================================================  ==========
@@ -1243,7 +1243,7 @@ code:Bind to object property
   
 ::
 
-  <input type="checkbox" name="user[interests][]" value="TYPO3" checked="checked" />
+  <input type="checkbox" name="user\[interests\]\[\]" value="TYPO3" checked="checked" />
   (depending on property "interests")
   
 
@@ -1454,8 +1454,8 @@ code:Bind to object property
   
 ::
 
-  <input type="radio" name="user[newsletter]" value="1" checked="checked" /> yes
-  <input type="radio" name="user[newsletter]" value="0" /> no
+  <input type="radio" name="user\[newsletter\]" value="1" checked="checked" /> yes
+  <input type="radio" name="user\[newsletter\]" value="0" /> no
   (depending on property "newsletter")
   
 
@@ -1848,7 +1848,7 @@ code:Child nodes
   
 ::
 
-  <![CDATA[(Content of {string} without any conversion/escaping)]]>
+  <!\[CDATA\[(Content of {string} without any conversion/escaping)\]\]>
   
 code:Value attribute
 ~~~~~~~~~~~~~~~~~~~~
@@ -1859,7 +1859,7 @@ code:Value attribute
   
 ::
 
-  <![CDATA[(Content of {string} without any conversion/escaping)]]>
+  <!\[CDATA\[(Content of {string} without any conversion/escaping)\]\]>
   
 code:Inline notation
 ~~~~~~~~~~~~~~~~~~~~
@@ -1870,7 +1870,7 @@ code:Inline notation
   
 ::
 
-  <![CDATA[(Content of {string} without any conversion/escaping)]]>
+  <!\[CDATA\[(Content of {string} without any conversion/escaping)\]\]>
   
 
 ==========  ==========  ==========  ===================  ==========
@@ -1906,11 +1906,11 @@ code:Custom suffix
 
 ::
 
-  <f:format.crop maxCharacters="17" append="&nbsp;[more]">This is some very long text</f:format.crop>
+  <f:format.crop maxCharacters="17" append="&nbsp;\[more\]">This is some very long text</f:format.crop>
   
 ::
 
-  This is some&nbsp;[more]
+  This is some&nbsp;\[more\]
   
 code:Don't respect word boundaries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2641,7 +2641,7 @@ code:link to the show-action of the current controller
   
 ::
 
-  <a href="index.php?id=123&tx_myextension_plugin[action]=show&tx_myextension_plugin[controller]=Standard&cHash=xyz">action link</f:link.action>
+  <a href="index.php?id=123&tx_myextension_plugin\[action\]=show&tx_myextension_plugin\[controller\]=Standard&cHash=xyz">action link</f:link.action>
   (depending on the current page and your TS configuration)
   
 /
@@ -2807,7 +2807,7 @@ code:query parameters for extensions
   
 ::
 
-  <a href="index.php?id=1&extension_key[foo]=bar">page link</f:link.action>
+  <a href="index.php?id=1&extension_key\[foo\]=bar">page link</f:link.action>
   (depending on your TS configuration)
   
 /
@@ -2917,7 +2917,7 @@ code:Rendering recursive sections
         <li>menu1b</li>
       </ul>
     </li>
-  [...]
+  \[...\]
   (depending on the value of {menu})
   
 code:Passing all variables to a partial
@@ -2993,7 +2993,7 @@ code:Rendering recursive sections
         <li>menu1b</li>
       </ul>
     </li>
-  [...]
+  \[...\]
   (depending on the value of {menu})
   
 
@@ -3238,7 +3238,7 @@ code:URI to the show-action of the current controller
   
 ::
 
-  index.php?id=123&tx_myextension_plugin[action]=show&tx_myextension_plugin[controller]=Standard&cHash=xyz
+  index.php?id=123&tx_myextension_plugin\[action\]=show&tx_myextension_plugin\[controller\]=Standard&cHash=xyz
   (depending on the current page and your TS configuration)
   
 /
@@ -3352,7 +3352,7 @@ code:Inline notation
   
 ::
 
-  typo3temp/pics/[b4c0e7ed5c].png
+  typo3temp/pics/\[b4c0e7ed5c\].png
   (depending on your TYPO3s encryption key)
   
 code:non existing image
@@ -3425,7 +3425,7 @@ code:query parameters for extensions
   
 ::
 
-  index.php?id=1&extension_key[foo]=bar
+  index.php?id=1&extension_key\[foo\]=bar
   (depending on your TS configuration)
   
 /
@@ -3537,7 +3537,7 @@ code:URI to the show-action of the current controller
   
 ::
 
-  <a href="index.php?id=123&tx_myextension_plugin[widgetIdentifier][action]=show&tx_myextension_plugin[widgetIdentifier][controller]=Standard&cHash=xyz">link</a>
+  <a href="index.php?id=123&tx_myextension_plugin\[widgetIdentifier\]\[action\]=show&tx_myextension_plugin\[widgetIdentifier\]\[controller\]=Standard&cHash=xyz">link</a>
   (depending on the current page, widget and your TS configuration)
   
 
@@ -3636,7 +3636,7 @@ code:URI to the show-action of the current controller
   
 ::
 
-  index.php?id=123&tx_myextension_plugin[widgetIdentifier][action]=show&tx_myextension_plugin[widgetIdentifier][controller]=Standard&cHash=xyz
+  index.php?id=123&tx_myextension_plugin\[widgetIdentifier\]\[action\]=show&tx_myextension_plugin\[widgetIdentifier\]\[controller\]=Standard&cHash=xyz
   (depending on the current page, widget and your TS configuration)
   
 
