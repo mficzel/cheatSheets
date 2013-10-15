@@ -20,33 +20,29 @@ Examples
 code: Single alias
 ------------------
 .. code:: xml
-   
+
    <f:alias map="{x: 'foo'}">{x}</f:alias>
-   
 
 output
 ------
 .. code:: xml
-   
+
    foo
-   
 
 code: Multiple mappings
 -----------------------
 .. code:: xml
-   
+
    <f:alias map="{x: foo.bar.baz, y: foo.bar.baz.name}">
      {x.name} or {y}
    </f:alias>
-   
 
 output
 ------
 .. code:: xml
-   
+
    [name] or [name]
    depending on {foo.bar.baz}
-   
 
 
 ==========  ==========  ==========  ====================================================================  ==========
@@ -72,17 +68,15 @@ Examples
 code: Example
 -------------
 .. code:: xml
-   
+
    <f:base />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <base href="http://yourdomain.tld/" />
    (depending on your domain)
-   
 
 
 
@@ -104,30 +98,26 @@ Examples
 code: Default
 -------------
 .. code:: xml
-   
+
    <f:be.buttons.csh />
-   
 
 output
 ------
 .. code:: xml
-   
+
    CSH button as known from the TYPO3 backend.
-   
 
 code: Full configuration
 ------------------------
 .. code:: xml
-   
+
    <f:be.buttons.csh table="xMOD_csh_corebe" field="someCshKey" iconOnly="1" styleAttributes="border: 1px solid red" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    CSH button as known from the TYPO3 backend with some custom settings.
-   
 /
 
 
@@ -155,38 +145,33 @@ Examples
 code: Default
 -------------
 .. code:: xml
-   
+
    <f:be.buttons.icon uri="{f:uri.action()}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    An icon button as known from the TYPO3 backend, skinned and linked with the default action of the current controller.
    Note: By default the "close" icon is used as image
-   
 
 code: Default
 -------------
 .. code:: xml
-   
+
    <f:be.buttons.icon uri="{f:uri.action(action:'new')}" icon="actions-document-new" title="Create new Foo" />
-   
 
 code: Default
 -------------
 .. code:: xml
-   
+
    <f:be.buttons.icon icon="actions-document-new" title="Create new Foo" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    Here the "actions-document-new" icon is returned, but without link.
-   
 /
 
 
@@ -214,34 +199,30 @@ Examples
 code: Default
 -------------
 .. code:: xml
-   
+
    <f:be.buttons.shortcut />
-   
 
 output
 ------
 .. code:: xml
-   
+
    Shortcut button as known from the TYPO3 backend.
    By default the current page id, module name and all module arguments will be stored
-   
 
 code: Explicitly set parameters to be stored in the shortcut
 ------------------------------------------------------------
 .. code:: xml
-   
+
    <f:be.buttons.shortcut getVars="{0: 'M', 1: 'myOwnPrefix'}" setVars="{0: 'function'}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    Shortcut button as known from the TYPO3 backend.
    This time only the specified GET parameters and SET[]-settings will be stored.
    Note:
    Normally you won't need to set getVars & setVars parameters in Extbase modules
-   
 /
 
 
@@ -268,32 +249,28 @@ Examples
 code: Simple
 ------------
 .. code:: xml
-   
+
    <f:be.container>your module content</f:be.container>
-   
 
 output
 ------
 .. code:: xml
-   
+
    "your module content" wrapped with propper head & body tags.
    Default backend CSS styles and JavaScript will be included
-   
 
 code: All options
 -----------------
 .. code:: xml
-   
+
    <f:be.container pageTitle="foo" enableJumpToUrl="false" enableClickMenu="false" loadPrototype="false" loadScriptaculous="false" scriptaculousModule="someModule,someOtherModule" loadExtJs="true" loadExtJsTheme="false" extJsAdapter="jQuery" enableExtJsDebug="true" addCssFile="{f:uri.resource(path:'styles/backend.css')}" addJsFile="{f:uri.resource(path:'scripts/main.js')}">your module content</f:be.container>
-   
 
 output
 ------
 .. code:: xml
-   
+
    "your module content" wrapped with propper head & body tags.
    Custom CSS file EXT:your_extension/Resources/Public/styles/backend.css and JavaScript file EXT:your_extension/Resources/Public/scripts/main.js will be loaded
-   
 /
 
 
@@ -331,30 +308,27 @@ Examples
 code: Simple
 ------------
 .. code:: xml
-   
+
    <f:be.menus.actionMenu>
    <f:be.menus.actionMenuItem label="Overview" controller="Blog" action="index" />
    <f:be.menus.actionMenuItem label="Create new Blog" controller="Blog" action="new" />
    <f:be.menus.actionMenuItem label="List Posts" controller="Post" action="index" arguments="{blog: blog}" />
    </f:be.menus.actionMenu>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Selectbox with the options "Overview", "Create new Blog" and "List Posts"
-   
 
 code: Localized
 ---------------
 .. code:: xml
-   
+
    <f:be.menus.actionMenu>
    <f:be.menus.actionMenuItem label="{f:translate(key='overview')}" controller="Blog" action="index" />
    <f:be.menus.actionMenuItem label="{f:translate(key='create_blog')}" controller="Blog" action="new" />
    </f:be.menus.actionMenu>
-   
 <output>
 localized selectbox
 <output>
@@ -388,30 +362,27 @@ Examples
 code: Simple
 ------------
 .. code:: xml
-   
+
    <f:be.menus.actionMenu>
    <f:be.menus.actionMenuItem label="Overview" controller="Blog" action="index" />
    <f:be.menus.actionMenuItem label="Create new Blog" controller="Blog" action="new" />
    <f:be.menus.actionMenuItem label="List Posts" controller="Post" action="index" arguments="{blog: blog}" />
    </f:be.menus.actionMenu>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Selectbox with the options "Overview", "Create new Blog" and "List Posts"
-   
 
 code: Localized
 ---------------
 .. code:: xml
-   
+
    <f:be.menus.actionMenu>
    <f:be.menus.actionMenuItem label="{f:translate(key='overview')}" controller="Blog" action="index" />
    <f:be.menus.actionMenuItem label="{f:translate(key='create_blog')}" controller="Blog" action="new" />
    </f:be.menus.actionMenu>
-   
 <output>
 localized selectbox
 <output>
@@ -441,16 +412,14 @@ Examples
 code
 ----
 .. code:: xml
-   
+
    <f:be.pageInfo />
-   
 
 output
 ------
 .. code:: xml
-   
+
    Page info icon with context menu
-   
 /
 
 
@@ -470,16 +439,14 @@ Examples
 code
 ----
 .. code:: xml
-   
+
    <f:be.pagePath />
-   
 
 output
 ------
 .. code:: xml
-   
+
    Current page path, prefixed with "Path:" and wrapped in a span with the class "typo3-docheader-pagePath"
-   
 /
 
 
@@ -498,23 +465,21 @@ Examples
 code: Basic usage
 -----------------
 .. code:: xml
-   
+
    <f:be.security.ifAuthenticated>
    This is being shown whenever a BE user is logged in
    </f:be.security.ifAuthenticated>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the <f:be.ifAuthenticated> tag is being displayed if you are authenticated with any BE user account.
-   
 
 code: IfAuthenticated / then / else
 -----------------------------------
 .. code:: xml
-   
+
    <f:be.security.ifAuthenticated>
    <f:then>
    This is being shown in case you have access.
@@ -523,15 +488,13 @@ code: IfAuthenticated / then / else
    This is being displayed in case you do not have access.
    </f:else>
    </f:be.security.ifAuthenticated>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the "then" tag is displayed if you have access.
    Otherwise, everything inside the "else"-tag is displayed.
-   
 
 
 ==========  ==========  ==========  =================================================  ==========
@@ -556,39 +519,35 @@ Examples
 code: Basic usage
 -----------------
 .. code:: xml
-   
+
    <f:be.security.ifHasRole role="Administrator">
    This is being shown in case the current BE user belongs to a BE usergroup (aka role) titled "Administrator" (case sensitive)
    </f:be.security.ifHasRole>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the <f:ifHasRole> tag is being displayed if the logged in BE user belongs to the specified role.
-   
 
 code: Using the usergroup uid as role identifier
 ------------------------------------------------
 .. code:: xml
-   
+
    <f:be.security.ifHasRole role="1">
    This is being shown in case the current BE user belongs to a BE usergroup (aka role) with the uid "1"
    </f:be.security.ifHasRole>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the <f:ifHasRole> tag is being displayed if the logged in BE user belongs to the specified role.
-   
 
 code: IfRole / then / else
 --------------------------
 .. code:: xml
-   
+
    <f:be.security.ifHasRole role="Administrator">
    <f:then>
    This is being shown in case you have the role.
@@ -597,15 +556,13 @@ code: IfRole / then / else
    This is being displayed in case you do not have the role.
    </f:else>
    </f:be.security.ifHasRole>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the "then" tag is displayed if the logged in BE user belongs to the specified role.
    Otherwise, everything inside the "else"-tag is displayed.
-   
 
 
 ==========  ==========  ==========  =====================================================  ==========
@@ -632,34 +589,30 @@ Examples
 code: Minimal
 -------------
 .. code:: xml
-   
+
    <f:be.tableList tableName="fe_users" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    List of all "Website user" records stored in the configured storage PID.
    Records will be editable, if the current BE user has got edit rights for the table "fe_users".
    Only the title column (username) will be shown.
    Context menu is active.
-   
 
 code: Full
 ----------
 .. code:: xml
-   
+
    <f:be.tableList tableName="fe_users" fieldList="{0: 'name', 1: 'email'}" storagePid="1" levels="2" filter='foo' recordsPerPage="10" sortField="name" sortDescending="true" readOnly="true" enableClickMenu="false" clickTitleMode="info" alternateBackgroundColors="true" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    List of "Website user" records with a text property of "foo" stored on PID 1 and two levels down.
    Clicking on a username will open the TYPO3 info popup for the respective record
-   
 /
 
 
@@ -695,23 +648,21 @@ Examples
 code: required arguments
 ------------------------
 .. code:: xml
-   
+
    <f:be.widget.paginate objects="{blogs}" as="paginatedBlogs">
    use {paginatedBlogs} as you used {blogs} before, most certainly inside
    a <f:for> loop.
    </f:be.widget.paginate>
-   
 
 code: full configuration
 ------------------------
 .. code:: xml
-   
+
    <f:be.widget.paginate objects="{blogs}" as="paginatedBlogs" configuration="{itemsPerPage: 5, insertAbove: 1, insertBelow: 0, recordsLabel: 'MyRecords'}">
    use {paginatedBlogs} as you used {blogs} before, most certainly inside
    a <f:for> loop.
    </f:be.widget.paginate>
    The recordsLabel can be used to replace the text in "Records 1 - 99" with a label of your own choice
-   
 
 Performance characteristics
 ===========================
@@ -747,44 +698,38 @@ Examples
 code: Render lib object
 -----------------------
 .. code:: xml
-   
+
    <f:cObject typoscriptObjectPath="lib.someLibObject" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    rendered lib.someLibObject
-   
 
 code: Specify cObject data & current value
 ------------------------------------------
 .. code:: xml
-   
+
    <f:cObject typoscriptObjectPath="lib.customHeader" data="{article}" current="{article.title}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    rendered lib.customHeader. data and current value will be available in TypoScript
-   
 
 code: inline notation
 ---------------------
 .. code:: xml
-   
+
    {article -> f:cObject(typoscriptObjectPath: 'lib.customHeader')}
-   
 
 output
 ------
 .. code:: xml
-   
+
    rendered lib.customHeader. data will be available in TypoScript
-   
 /
 
 
@@ -814,36 +759,33 @@ Examples
 code: Commenting out fluid code
 -------------------------------
 .. code:: xml
-   
+
    Before
    <f:comment>
      This is completely hidden.
      <f:debug>This does not get parsed</f:debug>
    </f:comment>
    After
-   
 
 output
 ------
 .. code:: xml
-   
+
    Before
    After
-   
 
 code: Prevent parsing
 ---------------------
 .. code:: xml
-   
+
    <f:comment><![CDATA[
     <f:some.invalid.syntax />
    ]]></f:comment>
-   
 
 output
 ------
 .. code:: xml
-   
+
    
 
 
@@ -862,30 +804,26 @@ Examples
 code: Count array elements
 --------------------------
 .. code:: xml
-   
+
    <f:count subject="{0:1, 1:2, 2:3, 3:4}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    4
-   
 
 code: inline notation
 ---------------------
 .. code:: xml
-   
+
    {objects -> f:count()}
-   
 
 output
 ------
 .. code:: xml
-   
+
    10 (depending on the number of items in {objects})
-   
 
 
 ==========  ==========  ==========  ======================================  ==========
@@ -911,21 +849,19 @@ Examples
 code: Simple
 ------------
 .. code:: xml
-   
+
    <f:for each="{0:1, 1:2, 2:3, 3:4}" as="foo"><f:cycle values="{0: 'foo', 1: 'bar', 2: 'baz'}" as="cycle">{cycle}</f:cycle></f:for>
-   
 
 output
 ------
 .. code:: xml
-   
+
    foobarbazfoo
-   
 
 code: Alternating CSS class
 ---------------------------
 .. code:: xml
-   
+
    <ul>
      <f:for each="{0:1, 1:2, 2:3, 3:4}" as="foo">
        <f:cycle values="{0: 'odd', 1: 'even'}" as="zebraClass">
@@ -933,19 +869,17 @@ code: Alternating CSS class
        </f:cycle>
      </f:for>
    </ul>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <ul>
      <li class="odd">1</li>
      <li class="even">2</li>
      <li class="odd">3</li>
      <li class="even">4</li>
    </ul>
-   
 
 
 ==========  ==========  ==========  ===============================================================================================================================  ==========
@@ -970,30 +904,26 @@ Examples
 code: Simple
 ------------
 .. code:: xml
-   
+
    <f:debug>{testVariables.array}</f:debug>
-   
 
 output
 ------
 .. code:: xml
-   
+
    foobarbazfoo
-   
 
 code: All Features
 ------------------
 .. code:: xml
-   
+
    <f:debug title="My Title" maxDepth="5" blacklistedClassNames="{0:'Tx_BlogExample_Domain_Model_Administrator'}" plainText="TRUE" ansiColors="FALSE" inline="TRUE" blacklistedPropertyNames="{0:'posts'}">{blogs}</f:debug>
-   
 
 output
 ------
 .. code:: xml
-   
+
    [A HTML view of the var_dump]
-   
 /
 
 
@@ -1024,21 +954,19 @@ Examples
 code: Output content if condition is not met
 --------------------------------------------
 .. code:: xml
-   
+
    <f:if condition="{someCondition}">
      <f:else>
        condition was not true
      </f:else>
    </f:if>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the "else" tag is displayed if the condition evaluates to FALSE.
    Otherwise nothing is outputted in this example.
-   
 
 
 
@@ -1057,44 +985,39 @@ Examples
 code: Simple
 ------------
 .. code:: xml
-   
+
    <f:flashMessages />
-   
 
 output
 ------
 .. code:: xml
-   
+
    An ul-list of flash messages.
-   
 
 code: Output with custom css class
 ----------------------------------
 .. code:: xml
-   
+
    <f:flashMessages class="specialClass" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <ul class="specialClass">
    ...
    </ul>
-   
 
 code: TYPO3 core style
 ----------------------
 .. code:: xml
-   
+
    <f:flashMessages renderMode="div" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <div class="typo3-messages">
    <div class="typo3-message message-ok">
    <div class="message-header">Some Message Header</div>
@@ -1104,7 +1027,6 @@ output
    <div class="message-body">Some notice message without header</div>
    </div>
    </div>
-   
 
 
 ====================  ==========  ==========  ===================================================================================================  ==========
@@ -1139,62 +1061,56 @@ Examples
 code: Simple Loop
 -----------------
 .. code:: xml
-   
+
    <f:for each="{0:1, 1:2, 2:3, 3:4}" as="foo">{foo}</f:for>
-   
 
 output
 ------
 .. code:: xml
-   
+
    1234
-   
 
 code: Output array key
 ----------------------
 .. code:: xml
-   
+
    <ul>
      <f:for each="{fruit1: 'apple', fruit2: 'pear', fruit3: 'banana', fruit4: 'cherry'}" as="fruit" key="label">
        <li>{label}: {fruit}</li>
      </f:for>
    </ul>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <ul>
      <li>fruit1: apple</li>
      <li>fruit2: pear</li>
      <li>fruit3: banana</li>
      <li>fruit4: cherry</li>
    </ul>
-   
 
 code: Iteration information
 ---------------------------
 .. code:: xml
-   
+
    <ul>
      <f:for each="{0:1, 1:2, 2:3, 3:4}" as="foo" iteration="fooIterator">
        <li>Index: {fooIterator.index} Cycle: {fooIterator.cycle} Total: {fooIterator.total}{f:if(condition: fooIterator.isEven, then: ' Even')}{f:if(condition: fooIterator.isOdd, then: ' Odd')}{f:if(condition: fooIterator.isFirst, then: ' First')}{f:if(condition: fooIterator.isLast, then: ' Last')}</li>
      </f:for>
    </ul>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <ul>
      <li>Index: 0 Cycle: 1 Total: 4 Odd First</li>
      <li>Index: 1 Cycle: 2 Total: 4 Even</li>
      <li>Index: 2 Cycle: 3 Total: 4 Odd</li>
      <li>Index: 3 Cycle: 4 Total: 4 Even Last</li>
    </ul>
-   
 
 
 ==========  ==========  ==========  ======================================================================================================  ==========
@@ -1224,9 +1140,8 @@ It will submit the form data via a POST request. If you want to change this, use
 code: Example
 -------------
 .. code:: xml
-   
+
    <f:form action="...">...</f:form>
-   
 
 A complex form with a specified encoding type
 =============================================
@@ -1235,9 +1150,8 @@ A complex form with a specified encoding type
 code: Form with enctype set
 ---------------------------
 .. code:: xml
-   
+
    <f:form action=".." controller="..." package="..." enctype="multipart/form-data">...</f:form>
-   
 
 A Form which should render a domain object
 ==========================================
@@ -1246,12 +1160,11 @@ A Form which should render a domain object
 code: Binding a domain object to a form
 ---------------------------------------
 .. code:: xml
-   
+
    <f:form action="..." name="customer" object="{customer}">
    <f:form.hidden property="id" />
    <f:form.textbox property="name" />
    </f:form>
-   
 This automatically inserts the value of {customer.name} inside the textbox and adjusts the name of the textbox accordingly.
 /
 
@@ -1311,30 +1224,26 @@ Examples
 code: Defaults
 --------------
 .. code:: xml
-   
+
    <f:form.button>Send Mail</f:form.button>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <button type="submit" name="" value="">Send Mail</button>
-   
 
 code: Disabled cancel button with some HTML5 attributes
 -------------------------------------------------------
 .. code:: xml
-   
+
    <f:form.button type="reset" name="buttonName" value="buttonValue" disabled="disabled" formmethod="post" formnovalidate="formnovalidate">Cancel</f:form.button>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <button disabled="disabled" formmethod="post" formnovalidate="formnovalidate" type="reset" name="myForm[buttonName]" value="buttonValue">Cancel</button>
-   
 
 
 ====================  ==========  ==========  =================================================================================================================================================================================  ==========
@@ -1379,46 +1288,40 @@ Examples
 code: Example
 -------------
 .. code:: xml
-   
+
    <f:form.checkbox name="myCheckBox" value="someValue" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="checkbox" name="myCheckBox" value="someValue" />
-   
 
 code: Preselect
 ---------------
 .. code:: xml
-   
+
    <f:form.checkbox name="myCheckBox" value="someValue" checked="{object.value} == 5" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="checkbox" name="myCheckBox" value="someValue" checked="checked" />
    (depending on $object)
-   
 
 code: Bind to object property
 -----------------------------
 .. code:: xml
-   
+
    <f:form.checkbox property="interests" value="TYPO3" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="checkbox" name="user[interests][]" value="TYPO3" checked="checked" />
    (depending on property "interests")
-   
 
 
 ====================  ==========  ==========  ==========================================================================================================================  =============
@@ -1457,42 +1360,38 @@ Examples
 code: Output error messages as a list
 -------------------------------------
 .. code:: xml
-   
+
    <ul class="errors">
    <f:form.errors>
    <li>{error.code}: {error.message}</li>
    </f:form.errors>
    </ul>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <ul>
    <li>1234567890: Validation errors for argument "newBlog"</li>
    </ul>
-   
 
 code: Output error messages for a single property
 -------------------------------------------------
 .. code:: xml
-   
+
    <f:form.errors for="someProperty">
    <div class="error">
    <strong>{error.propertyName}</strong>: <f:for each="{error.errors}" as="errorDetail">{errorDetail.message}</f:for>
    </div>
    </f:form.errors>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <div class="error>
    <strong>someProperty:</strong> errorMessage1 errorMessage2
    </div>
-   
 
 
 ==========  ==========  ==========  ========================================================================================================================================================================================  ==========
@@ -1517,16 +1416,14 @@ Examples
 code: Example
 -------------
 .. code:: xml
-   
+
    <f:form.hidden name="myHiddenValue" value="42" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="hidden" name="myHiddenValue" value="42" />
-   
 You can also use the "property" attribute if you have bound an object to the form.
 See <f:form> for more documentation.
 
@@ -1564,16 +1461,14 @@ Examples
 code: Example
 -------------
 .. code:: xml
-   
+
    <f:form.password name="myPassword" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="password" name="myPassword" value="default value" />
-   
 
 
 ====================  ==========  ==========  ==========================================================================================================================  =============
@@ -1614,48 +1509,42 @@ Examples
 code: Example
 -------------
 .. code:: xml
-   
+
    <f:form.radio name="myRadioButton" value="someValue" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="radio" name="myRadioButton" value="someValue" />
-   
 
 code: Preselect
 ---------------
 .. code:: xml
-   
+
    <f:form.radio name="myRadioButton" value="someValue" checked="{object.value} == 5" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="radio" name="myRadioButton" value="someValue" checked="checked" />
    (depending on $object)
-   
 
 code: Bind to object property
 -----------------------------
 .. code:: xml
-   
+
    <f:form.radio property="newsletter" value="1" /> yes
    <f:form.radio property="newsletter" value="0" /> no
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="radio" name="user[newsletter]" value="1" checked="checked" /> yes
    <input type="radio" name="user[newsletter]" value="0" /> no
    (depending on property "newsletter")
-   
 
 
 ====================  ==========  ==========  ==========================================================================================================================  =============
@@ -1696,9 +1585,8 @@ The array key is used as option key, and the value is used as human-readable nam
 code: Basic usage
 -----------------
 .. code:: xml
-   
+
    <f:form.select name="paymentOptions" options="{payPal: 'PayPal International Services', visa: 'VISA Card'}" />
-   
 
 Pre-select a value
 ==================
@@ -1708,9 +1596,8 @@ To pre-select a value, set "value" to the option key which should be selected.
 code: Default value
 -------------------
 .. code:: xml
-   
+
    <f:form.select name="paymentOptions" options="{payPal: 'PayPal International Services', visa: 'VISA Card'}" value="visa" />
-   
 Generates a dropdown box like above, except that "VISA Card" is selected.
 If the select box is a multi-select box (multiple="true"), then "value" can be an array as well.
 
@@ -1728,9 +1615,8 @@ If provided, the value of the prependOptionValue variable as value.
 code: Domain objects
 --------------------
 .. code:: xml
-   
+
    <f:form.select name="users" options="{userArray}" optionValueField="id" optionLabelField="firstName" />
-   
 In the above example, the userArray is an array of "User" domain objects, with no array key specified.
 So, in the above example, the method $user->getId() is called to retrieve the key, and $user->getFirstName() to retrieve the displayed value of each entry.
 The "value" property now expects a domain object, and tests for object equivalence.
@@ -1780,30 +1666,26 @@ Examples
 code: Defaults
 --------------
 .. code:: xml
-   
+
    <f:form.submit value="Send Mail" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="submit" />
-   
 
 code: Dummy content for template preview
 ----------------------------------------
 .. code:: xml
-   
+
    <f:submit name="mySubmit" value="Send Mail"><button>dummy button</button></f:submit>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="submit" name="mySubmit" value="Send Mail" />
-   
 
 
 ====================  ==========  ==========  ==========================================================================================================================  ==========
@@ -1841,16 +1723,14 @@ Examples
 code: Example
 -------------
 .. code:: xml
-   
+
    <f:form.textarea name="myTextArea" value="This is shown inside the textarea" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <textarea name="myTextArea">This is shown inside the textarea</textarea>
-   
 
 
 ====================  ==========  ==========  ==========================================================================================================================  =============
@@ -1890,16 +1770,14 @@ Examples
 code: Example
 -------------
 .. code:: xml
-   
+
    <f:form.textfield name="myTextBox" value="default value" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="text" name="myTextBox" value="default value" />
-   
 
 
 ====================  ==========  ==========  ==========================================================================================================================  =============
@@ -1944,16 +1822,14 @@ Examples
 code: Example
 -------------
 .. code:: xml
-   
+
    <f:form.upload name="file" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="file" name="file" />
-   
 
 
 ====================  ==========  ==========  ==========================================================================================================================  =============
@@ -1991,7 +1867,7 @@ Examples
 code: Output error messages as a list
 -------------------------------------
 .. code:: xml
-   
+
    <f:form.validationResults>
      <f:if condition="{validationResults.flattenedErrors}">
        <ul class="errors">
@@ -2007,21 +1883,19 @@ code: Output error messages as a list
        </ul>
      </f:if>
    </f:form.validationResults>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <ul class="errors">
      <li>1234567890: Validation errors for argument "newBlog"</li>
    </ul>
-   
 
 code: Output error messages for a single property
 -------------------------------------------------
 .. code:: xml
-   
+
    <f:form.validationResults for="someProperty">
      <f:if condition="{validationResults.flattenedErrors}">
        <ul class="errors">
@@ -2031,16 +1905,14 @@ code: Output error messages for a single property
        </ul>
      </f:if>
    </f:form.validationResults>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <ul class="errors">
      <li>1234567890: Some error message</li>
    </ul>
-   
 
 
 ==========  ==========  ==========  ========================================================================================================================================================================================  =================
@@ -2067,44 +1939,38 @@ Examples
 code: Child nodes
 -----------------
 .. code:: xml
-   
+
    <f:format.cdata>{string}</f:format.cdata>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <![CDATA[(Content of {string} without any conversion/escaping)]]>
-   
 
 code: Value attribute
 ---------------------
 .. code:: xml
-   
+
    <f:format.cdata value="{string}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <![CDATA[(Content of {string} without any conversion/escaping)]]>
-   
 
 code: Inline notation
 ---------------------
 .. code:: xml
-   
+
    {string -> f:format.cdata()}
-   
 
 output
 ------
 .. code:: xml
-   
+
    <![CDATA[(Content of {string} without any conversion/escaping)]]>
-   
 
 
 ==========  ==========  ==========  ===================  ==========
@@ -2128,73 +1994,63 @@ Examples
 code: Defaults
 --------------
 .. code:: xml
-   
+
    <f:format.crop maxCharacters="10">This is some very long text</f:format.crop>
-   
 
 output
 ------
 .. code:: xml
-   
+
    This is...
-   
 
 code: Custom suffix
 -------------------
 .. code:: xml
-   
+
    <f:format.crop maxCharacters="17" append="&nbsp;[more]">This is some very long text</f:format.crop>
-   
 
 output
 ------
 .. code:: xml
-   
+
    This is some&nbsp;[more]
-   
 
 code: Don't respect word boundaries
 -----------------------------------
 .. code:: xml
-   
+
    <f:format.crop maxCharacters="10" respectWordBoundaries="false">This is some very long text</f:format.crop>
-   
 
 output
 ------
 .. code:: xml
-   
+
    This is so...
-   
 
 code: Don't respect HTML tags
 -----------------------------
 .. code:: xml
-   
+
    <f:format.crop maxCharacters="28" respectWordBoundaries="false" respectHtml="false">This is some text with <strong>HTML</strong> tags</f:format.crop>
-   
 
 output
 ------
 .. code:: xml
-   
+
    This is some text with <stro
-   
 
 code: Inline notation
 ---------------------
 .. code:: xml
-   
+
    {someLongText -> f:format.crop(maxCharacters: 10)}
-   
 
 output
 ------
 .. code:: xml
-   
+
    someLongText cropped after 10 characters...
    (depending on the value of {someLongText})
-   
 /
 
 
@@ -2222,45 +2078,39 @@ Examples
 code: Defaults
 --------------
 .. code:: xml
-   
+
    <f:format.currency>123.456</f:format.currency>
-   
 
 output
 ------
 .. code:: xml
-   
+
    123,46
-   
 
 code: All parameters
 --------------------
 .. code:: xml
-   
+
    <f:format.currency currencySign="$" decimalSeparator="." thousandsSeparator="," prependCurrency="TRUE" separateCurrency="FALSE" decimals="2">54321</f:format.currency>
-   
 
 output
 ------
 .. code:: xml
-   
+
    $54,321.00
-   
 
 code: Inline notation
 ---------------------
 .. code:: xml
-   
+
    {someNumber -> f:format.currency(thousandsSeparator: ',', currencySign: '€')}
-   
 
 output
 ------
 .. code:: xml
-   
+
    54,321,00 €
    (depending on the value of {someNumber})
-   
 
 
 ==================  ==========  ==========  ========================================================================================================================  ==========
@@ -2289,47 +2139,41 @@ Examples
 code: Defaults
 --------------
 .. code:: xml
-   
+
    <f:format.date>{dateObject}</f:format.date>
-   
 
 output
 ------
 .. code:: xml
-   
+
    1980-12-13
    (depending on the current date)
-   
 
 code: Custom date format
 ------------------------
 .. code:: xml
-   
+
    <f:format.date format="H:i">{dateObject}</f:format.date>
-   
 
 output
 ------
 .. code:: xml
-   
+
    01:23
    (depending on the current time)
-   
 
 code: strtotime string
 ----------------------
 .. code:: xml
-   
+
    <f:format.date format="d.m.Y - H:i:s">+1 week 2 days 4 hours 2 seconds</f:format.date>
-   
 
 output
 ------
 .. code:: xml
-   
+
    13.12.1980 - 21:03:42
    (depending on the current time, see http://www.php.net/manual/en/function.strtotime.php)
-   
 <code title="output date from unix timestamp">
 
 
@@ -2357,45 +2201,39 @@ Examples
 code: Default parameters
 ------------------------
 .. code:: xml
-   
+
    <f:format.html>foo <b>bar</b>. Some <LINK 1>link</LINK>.</f:format.html>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <p class="bodytext">foo <b>bar</b>. Some <a href="index.php?id=1" >link</a>.</p>
    (depending on your TYPO3 setup)
-   
 
 code: Custom parseFunc
 ----------------------
 .. code:: xml
-   
+
    <f:format.html parseFuncTSPath="lib.parseFunc">foo <b>bar</b>. Some <LINK 1>link</LINK>.</f:format.html>
-   
 
 output
 ------
 .. code:: xml
-   
+
    foo <b>bar</b>. Some <a href="index.php?id=1" >link</a>.
-   
 
 code: Inline notation
 ---------------------
 .. code:: xml
-   
+
    {someText -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}
-   
 
 output
 ------
 .. code:: xml
-   
+
    foo <b>bar</b>. Some <a href="index.php?id=1" >link</a>.
-   
 
 
 ===============  ==========  ==========  ===================================  =================
@@ -2517,58 +2355,50 @@ Examples
 code: Scientific notation
 -------------------------
 .. code:: xml
-   
+
    <f:format.printf arguments="{number: 362525200}">%.3e</f:format.printf>
-   
 
 output
 ------
 .. code:: xml
-   
+
    3.625e+8
-   
 
 code: Argument swapping
 -----------------------
 .. code:: xml
-   
+
    <f:format.printf arguments="{0: 3, 1: 'Kasper'}">%2$s is great, TYPO%1$d too. Yes, TYPO%1$d is great and so is %2$s!</f:format.printf>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Kasper is great, TYPO3 too. Yes, TYPO3 is great and so is Kasper!
-   
 
 code: Single argument
 ---------------------
 .. code:: xml
-   
+
    <f:format.printf arguments="{1: 'TYPO3'}">We love %s</f:format.printf>
-   
 
 output
 ------
 .. code:: xml
-   
+
    We love TYPO3
-   
 
 code: Inline notation
 ---------------------
 .. code:: xml
-   
+
    {someText -> f:format.printf(arguments: {1: 'TYPO3'})}
-   
 
 output
 ------
 .. code:: xml
-   
+
    We love TYPO3
-   
 
 
 ==========  ==========  ==========  ==========================  ==========
@@ -2595,44 +2425,38 @@ Examples
 code: Child nodes
 -----------------
 .. code:: xml
-   
+
    <f:format.raw>{string}</f:format.raw>
-   
 
 output
 ------
 .. code:: xml
-   
+
    (Content of {string} without any conversion/escaping)
-   
 
 code: Value attribute
 ---------------------
 .. code:: xml
-   
+
    <f:format.raw value="{string}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    (Content of {string} without any conversion/escaping)
-   
 
 code: Inline notation
 ---------------------
 .. code:: xml
-   
+
    {string -> f:format.raw()}
-   
 
 output
 ------
 .. code:: xml
-   
+
    (Content of {string} without any conversion/escaping)
-   
 
 
 ==========  ==========  ==========  ===================  ==========
@@ -2688,25 +2512,23 @@ Examples
 code: Simple
 ------------
 .. code:: xml
-   
+
    <f:groupedFor each="{0: {name: 'apple', color: 'green'}, 1: {name: 'cherry', color: 'red'}, 2: {name: 'banana', color: 'yellow'}, 3: {name: 'strawberry', color: 'red'}}" as="fruitsOfThisColor" groupBy="color">
      <f:for each="{fruitsOfThisColor}" as="fruit">
        {fruit.name}
      </f:for>
    </f:groupedFor>
-   
 
 output
 ------
 .. code:: xml
-   
+
    apple cherry strawberry banana
-   
 
 code: Two dimensional list
 --------------------------
 .. code:: xml
-   
+
    <ul>
      <f:groupedFor each="{0: {name: 'apple', color: 'green'}, 1: {name: 'cherry', color: 'red'}, 2: {name: 'banana', color: 'yellow'}, 3: {name: 'strawberry', color: 'red'}}" as="fruitsOfThisColor" groupBy="color" groupKey="color">
        <li>
@@ -2719,12 +2541,11 @@ code: Two dimensional list
        </li>
      </f:groupedFor>
    </ul>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <ul>
      <li>green fruits
        <ul>
@@ -2745,7 +2566,6 @@ output
        </ul>
      </li>
    </ul>
-   
 
 
 ==========  ==========  ==========  ===============================================================================  ==========
@@ -2798,23 +2618,21 @@ Examples
 code: Basic usage
 -----------------
 .. code:: xml
-   
+
    <f:if condition="somecondition">
      This is being shown in case the condition matches
    </f:if>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the <f:if> tag is being displayed if the condition evaluates to TRUE.
-   
 
 code: If / then / else
 ----------------------
 .. code:: xml
-   
+
    <f:if condition="somecondition">
      <f:then>
        This is being shown in case the condition matches.
@@ -2823,30 +2641,26 @@ code: If / then / else
        This is being displayed in case the condition evaluates to FALSE.
      </f:else>
    </f:if>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the "then" tag is displayed if the condition evaluates to TRUE.
    Otherwise, everything inside the "else"-tag is displayed.
-   
 
 code: inline notation
 ---------------------
 .. code:: xml
-   
+
    {f:if(condition: someCondition, then: 'condition is met', else: 'condition is not met')}
-   
 
 output
 ------
 .. code:: xml
-   
+
    The value of the "then" attribute is displayed if the condition evaluates to TRUE.
    Otherwise, everything the value of the "else"-attribute is displayed.
-   
 
 
 ==========  ==========  ==========  =================================================  ==========
@@ -2872,47 +2686,41 @@ Examples
 code: Default
 -------------
 .. code:: xml
-   
+
    <f:image src="EXT:myext/Resources/Public/typo3_logo.png" alt="alt text" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <img alt="alt text" src="typo3conf/ext/myext/Resources/Public/typo3_logo.png" width="396" height="375" />
    or (in BE mode):
    <img alt="alt text" src="../typo3conf/ext/viewhelpertest/Resources/Public/typo3_logo.png" width="396" height="375" />
-   
 
 code: Inline notation
 ---------------------
 .. code:: xml
-   
+
    {f:image(src: 'EXT:viewhelpertest/Resources/Public/typo3_logo.png', alt: 'alt text', minWidth: 30, maxWidth: 40)}
-   
 
 output
 ------
 .. code:: xml
-   
+
    <img alt="alt text" src="../typo3temp/pics/f13d79a526.png" width="40" height="38" />
    (depending on your TYPO3s encryption key)
-   
 
 code: non existing image
 ------------------------
 .. code:: xml
-   
+
    <f:image src="NonExistingImage.png" alt="foo" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    Could not get image resource for "NonExistingImage.png".
-   
 /
 
 
@@ -2958,16 +2766,14 @@ Examples
 code
 ----
 .. code:: xml
-   
+
    <f:layout name="main" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    (no output)
-   
 
 
 ==========  ==========  ==========  ========================================================  ==========
@@ -2991,17 +2797,15 @@ Examples
 code: link to the show-action of the current controller
 -------------------------------------------------------
 .. code:: xml
-   
+
    <f:link.action action="show">action link</f:link.action>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <a href="index.php?id=123&tx_myextension_plugin[action]=show&tx_myextension_plugin[controller]=Standard&cHash=xyz">action link</f:link.action>
    (depending on the current page and your TS configuration)
-   
 /
 
 
@@ -3087,30 +2891,26 @@ Examples
 code
 ----
 .. code:: xml
-   
+
    <f:link.external uri="http://www.typo3.org" target="_blank">external link</f:link.external>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <a href="http://www.typo3.org" target="_blank">external link</a>
-   
 
 code: custom default scheme
 ---------------------------
 .. code:: xml
-   
+
    <f:link.external uri="typo3.org" defaultScheme="ftp">external ftp link</f:link.external>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <a href="ftp://typo3.org">external ftp link</a>
-   
 
 
 ====================  ==========  ==========  ===================================================================================================  ==========
@@ -3149,47 +2949,41 @@ Examples
 code: link to the current page
 ------------------------------
 .. code:: xml
-   
+
    <f:link.page>page link</f:link.page>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <a href="index.php?id=123">page link</f:link.action>
    (depending on the current page and your TS configuration)
-   
 
 code: query parameters
 ----------------------
 .. code:: xml
-   
+
    <f:link.page pageUid="1" additionalParams="{foo: 'bar'}">page link</f:link.page>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <a href="index.php?id=1&foo=bar">page link</f:link.action>
    (depending on your TS configuration)
-   
 
 code: query parameters for extensions
 -------------------------------------
 .. code:: xml
-   
+
    <f:link.page pageUid="1" additionalParams="{extension_key: {foo: 'bar'}}">page link</f:link.page>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <a href="index.php?id=1&extension_key[foo]=bar">page link</f:link.action>
    (depending on your TS configuration)
-   
 /
 
 
@@ -3253,36 +3047,32 @@ Examples
 code: Rendering partials
 ------------------------
 .. code:: xml
-   
+
    <f:render partial="SomePartial" arguments="{foo: someVariable}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    the content of the partial "SomePartial". The content of the variable {someVariable} will be available in the partial as {foo}
-   
 
 code: Rendering sections
 ------------------------
 .. code:: xml
-   
+
    <f:section name="someSection">This is a section. {foo}</f:section>
    <f:render section="someSection" arguments="{foo: someVariable}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    the content of the section "someSection". The content of the variable {someVariable} will be available in the partial as {foo}
-   
 
 code: Rendering recursive sections
 ----------------------------------
 .. code:: xml
-   
+
    <f:section name="mySection">
     <ul>
       <f:for each="{myMenu}" as="menuItem">
@@ -3296,12 +3086,11 @@ code: Rendering recursive sections
     </ul>
    </f:section>
    <f:render section="mySection" arguments="{myMenu: menu}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <ul>
      <li>menu1
        <ul>
@@ -3311,22 +3100,19 @@ output
      </li>
    [...]
    (depending on the value of {menu})
-   
 
 code: Passing all variables to a partial
 ----------------------------------------
 .. code:: xml
-   
+
    <f:render partial="somePartial" arguments="{_all}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    the content of the partial "somePartial".
    Using the reserved keyword "_all", all available variables will be passed along to the partial
-   
 
 
 ==========  ==========  ==========  ===================================================================================================================================================================  ==========
@@ -3353,22 +3139,20 @@ Examples
 code: Rendering sections
 ------------------------
 .. code:: xml
-   
+
    <f:section name="someSection">This is a section. {foo}</f:section>
    <f:render section="someSection" arguments="{foo: someVariable}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    the content of the section "someSection". The content of the variable {someVariable} will be available in the partial as {foo}
-   
 
 code: Rendering recursive sections
 ----------------------------------
 .. code:: xml
-   
+
    <f:section name="mySection">
     <ul>
       <f:for each="{myMenu}" as="menuItem">
@@ -3382,12 +3166,11 @@ code: Rendering recursive sections
     </ul>
    </f:section>
    <f:render section="mySection" arguments="{myMenu: menu}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <ul>
      <li>menu1
        <ul>
@@ -3397,7 +3180,6 @@ output
      </li>
    [...]
    (depending on the value of {menu})
-   
 
 
 ==========  ==========  ==========  ===================  ==========
@@ -3421,23 +3203,21 @@ Examples
 code: Basic usage
 -----------------
 .. code:: xml
-   
+
    <f:security.ifAuthenticated>
    This is being shown whenever a FE user is logged in
    </f:security.ifAuthenticated>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the <f:ifAuthenticated> tag is being displayed if you are authenticated with any FE user account.
-   
 
 code: IfAuthenticated / then / else
 -----------------------------------
 .. code:: xml
-   
+
    <f:security.ifAuthenticated>
    <f:then>
    This is being shown in case you have access.
@@ -3446,15 +3226,13 @@ code: IfAuthenticated / then / else
    This is being displayed in case you do not have access.
    </f:else>
    </f:security.ifAuthenticated>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the "then" tag is displayed if you have access.
    Otherwise, everything inside the "else"-tag is displayed.
-   
 
 
 ==========  ==========  ==========  =================================================  ==========
@@ -3479,39 +3257,35 @@ Examples
 code: Basic usage
 -----------------
 .. code:: xml
-   
+
    <f:security.ifHasRole role="Administrator">
    This is being shown in case the current FE user belongs to a FE usergroup (aka role) titled "Administrator" (case sensitive)
    </f:security.ifHasRole>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the <f:ifHasRole> tag is being displayed if the logged in FE user belongs to the specified role.
-   
 
 code: Using the usergroup uid as role identifier
 ------------------------------------------------
 .. code:: xml
-   
+
    <f:security.ifHasRole role="1">
    This is being shown in case the current FE user belongs to a FE usergroup (aka role) with the uid "1"
    </f:security.ifHasRole>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the <f:ifHasRole> tag is being displayed if the logged in FE user belongs to the specified role.
-   
 
 code: IfRole / then / else
 --------------------------
 .. code:: xml
-   
+
    <f:security.ifHasRole role="Administrator">
    <f:then>
    This is being shown in case you have the role.
@@ -3520,15 +3294,13 @@ code: IfRole / then / else
    This is being displayed in case you do not have the role.
    </f:else>
    </f:security.ifHasRole>
-   
 
 output
 ------
 .. code:: xml
-   
+
    Everything inside the "then" tag is displayed if the logged in FE user belongs to the specified role.
    Otherwise, everything inside the "else"-tag is displayed.
-   
 
 
 ==========  ==========  ==========  =====================================================  ==========
@@ -3564,89 +3336,77 @@ Examples
 code: Translate key
 -------------------
 .. code:: xml
-   
+
    <f:translate key="key1" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    value of key "key1" in the current website language
-   
 
 code: Keep HTML tags
 --------------------
 .. code:: xml
-   
+
    <f:translate key="htmlKey" htmlEscape="false" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    value of key "htmlKey" in the current website language, no htmlspecialchars applied
-   
 
 code: Translate key from custom locallang file
 ----------------------------------------------
 .. code:: xml
-   
+
    <f:translate key="LLL:EXT:myext/Resources/Private/Language/locallang.xml:key1" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    value of key "key1" in the current website language
-   
 
 code: Inline notation with arguments and default value
 ------------------------------------------------------
 .. code:: xml
-   
+
    {f:translate(key: 'argumentsKey', arguments: {0: 'dog', 1: 'fox'}, default: 'default value')}
-   
 
 output
 ------
 .. code:: xml
-   
+
    value of key "argumentsKey" in the current website language
    with "%1" and "%2" are replaced by "dog" and "fox" (printf)
    if the key is not found, the output is "default value"
-   
 
 code: Inline notation with extension name
 -----------------------------------------
 .. code:: xml
-   
+
    {f:translate(key: 'someKey', extensionName: 'SomeExtensionName')}
-   
 
 output
 ------
 .. code:: xml
-   
+
    value of key "someKey" in the current website language
    the locallang file of extension "some_extension_name" will be used
-   
 
 code: Translate id as in TYPO3 Flow
 -----------------------------------
 .. code:: xml
-   
+
    <f:translate id="key1" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    value of id "key1" in the current website language
-   
 /
 
 
@@ -3676,17 +3436,15 @@ Examples
 code: URI to the show-action of the current controller
 ------------------------------------------------------
 .. code:: xml
-   
+
    <f:uri.action action="show" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    index.php?id=123&tx_myextension_plugin[action]=show&tx_myextension_plugin[controller]=Standard&cHash=xyz
    (depending on the current page and your TS configuration)
-   
 /
 
 
@@ -3745,30 +3503,26 @@ Examples
 code
 ----
 .. code:: xml
-   
+
    <f:uri.external uri="http://www.typo3.org" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    http://www.typo3.org
-   
 
 code: custom default scheme
 ---------------------------
 .. code:: xml
-   
+
    <f:uri.external uri="typo3.org" defaultScheme="ftp" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    ftp://typo3.org
-   
 
 
 =============  ==========  ==========  ===================================================================================================  ==========
@@ -3793,47 +3547,41 @@ Examples
 code: Default
 -------------
 .. code:: xml
-   
+
    <f:uri.image src="EXT:myext/Resources/Public/typo3_logo.png" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    typo3conf/ext/myext/Resources/Public/typo3_logo.png
    or (in BE mode):
    ../typo3conf/ext/myext/Resources/Public/typo3_logo.png
-   
 
 code: Inline notation
 ---------------------
 .. code:: xml
-   
+
    {f:uri.image(src: 'EXT:myext/Resources/Public/typo3_logo.png' minWidth: 30, maxWidth: 40)}
-   
 
 output
 ------
 .. code:: xml
-   
+
    typo3temp/pics/[b4c0e7ed5c].png
    (depending on your TYPO3s encryption key)
-   
 
 code: non existing image
 ------------------------
 .. code:: xml
-   
+
    <f:uri.image src="NonExistingImage.png" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    Could not get image resource for "NonExistingImage.png".
-   
 /
 
 
@@ -3865,47 +3613,41 @@ Examples
 code: URI to the current page
 -----------------------------
 .. code:: xml
-   
+
    <f:uri.page>page link</f:uri.page>
-   
 
 output
 ------
 .. code:: xml
-   
+
    index.php?id=123
    (depending on the current page and your TS configuration)
-   
 
 code: query parameters
 ----------------------
 .. code:: xml
-   
+
    <f:uri.page pageUid="1" additionalParams="{foo: 'bar'}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    index.php?id=1&foo=bar
    (depending on your TS configuration)
-   
 
 code: query parameters for extensions
 -------------------------------------
 .. code:: xml
-   
+
    <f:uri.page pageUid="1" additionalParams="{extension_key: {foo: 'bar'}}" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    index.php?id=1&extension_key[foo]=bar
    (depending on your TS configuration)
-   
 /
 
 
@@ -3939,17 +3681,15 @@ Examples
 code: Defaults
 --------------
 .. code:: xml
-   
+
    <link href="{f:uri.resource(path:'css/stylesheet.css')}" rel="stylesheet" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    <link href="Resources/Packages/MyPackage/stylesheet.css" rel="stylesheet" />
    (depending on current package)
-   
 /
 
 
@@ -3982,18 +3722,16 @@ Examples
 code: Render lib object
 -----------------------
 .. code:: xml
-   
+
    <input type="text" id="name" />
    <f:widget.autocomplete for="name" objects="{posts}" searchProperty="author">
-   
 
 output
 ------
 .. code:: xml
-   
+
    <input type="text" id="name" />
    the input field and the required JavaScript for the Ajax communication (see Resources/Private/Templates/ViewHelpers/Widget/Autocomplete/Index.html
-   
 
 
 ==============  ======================================================  ==========  ===========  ==========
@@ -4019,17 +3757,15 @@ Examples
 code: URI to the show-action of the current controller
 ------------------------------------------------------
 .. code:: xml
-   
+
    <f:widget.link action="show">link</f:widget.link>
-   
 
 output
 ------
 .. code:: xml
-   
+
    <a href="index.php?id=123&tx_myextension_plugin[widgetIdentifier][action]=show&tx_myextension_plugin[widgetIdentifier][controller]=Standard&cHash=xyz">link</a>
    (depending on the current page, widget and your TS configuration)
-   
 
 
 ====================  ==========  ==========  ===================================================================================================  ==========
@@ -4071,22 +3807,20 @@ Examples
 code: required arguments
 ------------------------
 .. code:: xml
-   
+
    <f:widget.paginate objects="{blogs}" as="paginatedBlogs">
    use {paginatedBlogs} as you used {blogs} before, most certainly inside
    a <f:for> loop.
    </f:widget.paginate>
-   
 
 code: full configuration
 ------------------------
 .. code:: xml
-   
+
    <f:widget.paginate objects="{blogs}" as="paginatedBlogs" configuration="{itemsPerPage: 5, insertAbove: 1, insertBelow: 0, maximumNumberOfLinks: 10}">
    use {paginatedBlogs} as you used {blogs} before, most certainly inside
    a <f:for> loop.
    </f:widget.paginate>
-   
 
 Performance characteristics
 ===========================
@@ -4122,17 +3856,15 @@ Examples
 code: URI to the show-action of the current controller
 ------------------------------------------------------
 .. code:: xml
-   
+
    <f:widget.uri action="show" />
-   
 
 output
 ------
 .. code:: xml
-   
+
    index.php?id=123&tx_myextension_plugin[widgetIdentifier][action]=show&tx_myextension_plugin[widgetIdentifier][controller]=Standard&cHash=xyz
    (depending on the current page, widget and your TS configuration)
-   
 
 
 ==========  ==========  ==========  =============================================================  ==========
